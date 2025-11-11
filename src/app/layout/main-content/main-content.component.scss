@@ -1,0 +1,44 @@
+:host {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+.mat-mdc-tab-group {
+  width: 100%;
+}
+
+.mat-mdc-tab-group,
+.mat-mdc-tab-group .mat-mdc-tab-body-wrapper {
+  height: 100%;
+}
+
+.main-tabs .mat-mdc-tab-body-wrapper {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+}
+
+.tab-content {
+  padding: 1rem;
+  -webkit-overflow-scrolling: touch;
+  text-align: justify;
+}
+
+// MOBILE OVERRIDES
+@media (max-width: 768px) {
+  .mat-mdc-tab-group,
+  .mat-mdc-tab-group .mat-mdc-tab-body-wrapper,
+  .mat-mdc-tab-group .mat-mdc-tab-body,
+  .mat-mdc-tab-group .mat-mdc-tab-body-content {
+    height: auto !important;
+    min-height: 0;
+    display: block;
+    overflow: overlay !important;
+  }
+
+  .tab-content {
+    height: auto !important;
+    overflow: overlay !important;
+  }
+}
