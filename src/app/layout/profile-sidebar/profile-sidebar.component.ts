@@ -1,11 +1,13 @@
 import { Component, computed, input } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
+import { MatDivider } from '@angular/material/divider';
 import { SocialItem } from './models/social-item';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'pf-profile-sidebar',
-  imports: [NgOptimizedImage, MatCardModule],
+  imports: [NgOptimizedImage, MatCardModule, MatDivider, MatButtonModule],
   templateUrl: './profile-sidebar.component.html',
   styleUrl: './profile-sidebar.component.scss',
 })
