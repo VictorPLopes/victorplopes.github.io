@@ -6,16 +6,21 @@
       [nickname]="'@Nickname'"
       [avatarSrc]="'https://i.pravatar.cc/512'"
       [role]="'Role'"
-      [bio]="'Short Bio | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia congue tortor consequat iaculis.'"
+      [bio]="
+        'Short Bio | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia congue tortor consequat iaculis.'
+      "
       [github]="'GitHub'"
       [twitter]="'Twitter'"
       [linkedin]="'LinkedIn'"
       [customWebsites]="[
-        { id: 1, label: 'Test', url: 'https://google.com'}
+        { id: 1, label: 'Test', url: 'https://google.com' },
+        { id: 2, label: 'Test2', url: 'https://google.com' }
       ]"
+      [socialButtonStyle]="'filled'"
     />
   </div>
   <div class="main-cell">
+    <h1>Portfolio</h1>
     <pf-main-content class="main" />
   </div>
 </div>

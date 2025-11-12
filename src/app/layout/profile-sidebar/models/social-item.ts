@@ -1,5 +1,5 @@
-export interface CustomWebsite {
-  id: number;
+export interface SocialItem {
+  id: string | number;
   label: string;
   url: string;
   style?: 'text' | 'filled' | 'elevated' | 'outlined' | 'tonal';

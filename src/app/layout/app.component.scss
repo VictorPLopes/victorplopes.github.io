@@ -18,6 +18,19 @@
   .main-cell {
     min-height: 0;
   }
+
+  .main-cell {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+  }
+}
+
+// MEDIUM SCREENS OVERRIDES
+@media (min-width: 769px) and (max-width: 1280px) {
+  .layout {
+    grid-template-columns: 3fr 9fr;
+  }
 }
 
 // MOBILE OVERRIDES
