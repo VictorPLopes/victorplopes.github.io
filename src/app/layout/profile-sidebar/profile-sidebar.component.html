@@ -1,25 +1,81 @@
 <aside class="card sidebar-card" role="complementary" aria-label="Profile summary">
   <div class="card-inner">
     <div class="personal-data">
-      <h1 class=name>{{ name() }}</h1>
-      <img
-        [ngSrc]="avatarSrc()"
-        [alt]="name()"
-        width="512"
-        height="512"
-        class="avatar"
-        priority
-      />
+      <h1 class="name">{{ name() }}</h1>
+      <img [ngSrc]="avatarSrc()" [alt]="name()" width="512" height="512" class="avatar" priority />
       <h4 class="nickname">{{ nickname() }}</h4>
-      <h3 class="role">{{ role()}}</h3>
+      <h3 class="role">{{ role() }}</h3>
     </div>
     <div class="bio">
       <p>{{ bio() }}</p>
     </div>
-    <mat-divider/>
+    @if (github() || linkedin() || twitter() || customWebsiteList()) {
+    <mat-divider />
     <nav aria-label="Social links" class="social">
-      <a matButton="filled" href="https://www.github.com/you" target="_blank">GitHub</a>
-      <a matButton="filled" href="https://linkedin.com/in/you" target="_blank">LinkedIn</a>
+      <ul class="social-list">
+        @if (github()) {
+        <li class="social-item">
+          <a
+            [matButton]="socialButtonStyle()"
+            [href]="'https://www.github.com/' + (github()! | handle)"
+            target="_blank"
+            class="social-link"
+          >
+            <mat-icon svgIcon="github" aria-hidden="false" aria-label="GitHub icon"></mat-icon>
+            <span class="social-label">GitHub</span>
+          </a>
+        </li>
+        } @if (linkedin()) {
+        <li class="social-item">
+          <a
+            [matButton]="socialButtonStyle()"
+            [href]="'https://www.linkedin.com/' + (linkedin()! | handle)"
+            target="_blank"
+            class="social-link"
+          >
+            <mat-icon svgIcon="linkedin" aria-hidden="false" aria-label="LinkedIn icon"></mat-icon>
+            <span class="social-label">LinkedIn</span>
+          </a>
+        </li>
+        } @if (twitter()) {
+        <li class="social-item">
+          <a
+            [matButton]="socialButtonStyle()"
+            [href]="'https://www.x.com/' + (twitter()! | handle)"
+            target="_blank"
+            class="social-link"
+          >
+            <mat-icon svgIcon="twitter" aria-hidden="false" aria-label="Twitter icon"></mat-icon>
+            <span class="social-label">Twitter ("X")</span>
+          </a>
+        </li>
+        } @for (website of customWebsiteList(); track website.id) {
+        <li class="social-item">
+          <a
+            [matButton]="website.style ?? socialButtonStyle()"
+            [href]="website.url"
+            target="_blank"
+            class="social-link"
+          >
+            @if (website.icon) {
+            <mat-icon
+              [svgIcon]="website.icon"
+              aria-hidden="false"
+              [aria-label]="website.label + 'icon'"
+            ></mat-icon>
+            } @else {
+            <mat-icon
+              fontIcon="open_in_new"
+              aria-hidden="false"
+              [aria-label]="website.label + 'icon'"
+            ></mat-icon>
+            }
+            <span class="social-label">{{ website.label }}</span>
+          </a>
+        </li>
+        }
+      </ul>
     </nav>
+    }
   </div>
 </aside>
