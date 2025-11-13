@@ -11,7 +11,7 @@
     </div>
     @if (socialItems()) {
     <mat-divider />
-    <nav aria-label="Social links" class="social">
+    <nav aria-label="Social links" class="social" [class.many-links]="socialItems().length > 5">
       <div class="social-rows">
         @for (row of socialRows(); track $index) {
         <div

@@ -33,6 +33,29 @@
   }
 }
 
+.many-links {
+  @media (min-width: 769px) and (min-height: 501px) {
+    .social-rows {
+      flex-direction: column;
+      .social-row {
+        display: grid;
+        .social-link {
+          align-items: center;
+          justify-content: center;
+          gap: 0;
+          padding: 0.5rem;
+          width: 100%;
+          text-decoration: none;
+          border-radius: 8px;
+          .social-label {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 .personal-data {
   display: flex;
   flex-direction: column;
