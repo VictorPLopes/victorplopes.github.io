@@ -1,7 +1,7 @@
 <section class="card main-card" role="main" aria-label="Main content">
   <div class="card-inner">
     <mat-tab-group stretchTabs fitInkBarToContent animationDuration="0ms" class="main-tabs">
-      <mat-tab label="First">
+      <mat-tab label="About Me">
         <div class="tab-content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit, quam at elementum
           rutrum, est purus tempus eros, vel pretium lacus lacus gravida lacus. Nunc a hendrerit
@@ -66,8 +66,25 @@
           ipsum id, fringilla tempus justo.
         </div>
       </mat-tab>
-      <mat-tab label="Second"> <div class="tab-content">Content 2</div> </mat-tab>
-      <mat-tab label="Third"> <div class="tab-content">Content 3</div> </mat-tab>
+      <mat-tab label="Projects">
+        <div class="tab-content projects">
+          @for (project of projectsList; track $index) {
+          <pf-text-content
+            [title]="project.title"
+            [subtitle]="project.subtitle"
+            [imageUrl]="project.imageUrl"
+            [description]="project.description"
+            [url]="project.url"
+            [tags]="project.tags"
+          />
+          }
+        </div>
+      </mat-tab>
+      <mat-tab label="Test">
+        <div class="tab-content">
+          <img src="https://picsum.photos/3000" alt="">
+        </div>
+      </mat-tab>
     </mat-tab-group>
   </div>
 </section>

@@ -13,10 +13,22 @@
   display: flex;
 }
 
+.mat-mdc-tab-group .mat-mdc-tab-body-content {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  min-height: 0;
+}
+
 .tab-content {
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
   -webkit-overflow-scrolling: touch;
   text-align: justify;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 // MOBILE OVERRIDES

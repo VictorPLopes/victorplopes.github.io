@@ -87,7 +87,6 @@ export class ProfileSidebarComponent {
       rows.push(items.slice(idx, idx + cols));
       idx += cols;
     }
-    debugger;
     return rows;
   });
 

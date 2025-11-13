@@ -1,0 +1,46 @@
+<mat-card appearance="outlined" class="text-card" [class.no-image]="!imageUrl()">
+  <a
+    [href]="url() ?? '#'"
+    class="content"
+    [class.no-image]="!imageUrl()"
+    [target]="url() ? '_blank' : ''"
+  >
+    @if (imageUrl()) {
+    <div class="cover">
+      <img mat-card-image [ngSrc]="imageUrl()!" width="200" height="200" alt="Cover image" />
+    </div>
+    }
+    <div class="info" [class.no-image]="!imageUrl()">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title
+            ><b>{{ title() }}</b></mat-card-title
+          >
+          @if (subtitle()) {
+          <mat-card-subtitle>{{ subtitle() }}</mat-card-subtitle>
+          }
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>{{ description() }}</mat-card-content>
+      @if (tagsList() || url()) {
+      <mat-card-footer>
+        <div class="footer">
+          @if (tagsList()) {
+          <mat-chip-set>
+            @for (tag of tagsList(); track $index) {
+            <mat-chip>{{ tag }}</mat-chip>
+            }
+          </mat-chip-set>
+          } @if (url()) {
+          <mat-card-actions align="end">
+            <a mat-icon-button>
+              <mat-icon>open_in_new</mat-icon>
+            </a>
+          </mat-card-actions>
+          }
+        </div>
+      </mat-card-footer>
+      }
+    </div>
+  </a>
+</mat-card>
