@@ -62,8 +62,8 @@ mat-card.text-card {
   }
 }
 
-// MOBILE OVERRIDES
-@media (max-width: 768px) {
+// MOBILE AND SMALL SCREENS OVERRIDES
+@media (max-width: 930px) {
   mat-card.text-card {
     height: auto;
     .content {

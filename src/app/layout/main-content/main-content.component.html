@@ -1,6 +1,12 @@
 <section class="card main-card" role="main" aria-label="Main content">
   <div class="card-inner">
-    <mat-tab-group stretchTabs fitInkBarToContent animationDuration="0ms" class="main-tabs">
+    <mat-tab-group
+      stretchTabs
+      [fitInkBarToContent]="true"
+      animationDuration="0ms"
+      [disableRipple]="true"
+      class="main-tabs"
+    >
       <mat-tab label="About Me">
         <div class="tab-content">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis hendrerit, quam at elementum
@@ -82,7 +88,7 @@
       </mat-tab>
       <mat-tab label="Test">
         <div class="tab-content">
-          <img src="https://picsum.photos/3000" alt="">
+          <img src="https://picsum.photos/3000" alt="" />
         </div>
       </mat-tab>
     </mat-tab-group>
