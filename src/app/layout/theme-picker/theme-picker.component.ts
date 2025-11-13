@@ -1,0 +1,78 @@
+// Taken from https://krishnamohan.dev/blog/angular-dark/
+
+import { Component, effect, OnInit, Renderer2, signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
+@Component({
+  selector: 'pf-theme-picker',
+  imports: [MatButtonModule, MatTooltipModule, MatIconModule],
+  template: `
+    <button mat-icon-button (click)="changeMode()">
+      @if (mode() == 'dark') {
+      <mat-icon> light_mode </mat-icon>
+      } @else {
+      <mat-icon> dark_mode </mat-icon>
+      }
+    </button>
+  `,
+  styleUrl: './theme-picker.component.scss',
+})
+export class ThemePickerComponent implements OnInit {
+  mode = signal('light');
+  static storageKey = 'docs-theme-storage-current-name';
+
+  constructor(private renderer: Renderer2) {
+    effect(() => {
+      if (this.mode() == 'dark') {
+        this.renderer.setStyle(document.documentElement, 'color-scheme', 'dark');
+      } else {
+        this.renderer.setStyle(document.documentElement, 'color-scheme', 'light');
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    const currentTheme =
+      this.getStoredThemeName() ??
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (currentTheme) {
+      this.mode.set(currentTheme);
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+      const newColorScheme = event.matches ? 'dark' : 'light';
+      if (event.matches) {
+        this.mode.set('dark');
+      } else {
+        this.mode.set('light');
+      }
+    });
+  }
+
+  changeMode() {
+    if (this.mode() == 'dark') this.mode.set('light');
+    else this.mode.set('dark');
+    this.storeTheme(this.mode());
+  }
+
+  storeTheme(theme: string) {
+    try {
+      window.localStorage[ThemePickerComponent.storageKey] = theme;
+    } catch {}
+  }
+
+  getStoredThemeName(): string | null {
+    try {
+      return window.localStorage[ThemePickerComponent.storageKey] || null;
+    } catch {
+      return null;
+    }
+  }
+
+  clearStorage() {
+    try {
+      window.localStorage.removeItem(ThemePickerComponent.storageKey);
+    } catch {}
+  }
+}
