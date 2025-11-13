@@ -31,6 +31,14 @@
   gap: 0.5rem;
 }
 
+.art-projects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
 // MOBILE OVERRIDES
 @media (max-width: 768px) {
   .mat-mdc-tab-group,
@@ -46,5 +54,13 @@
   .tab-content {
     height: auto !important;
     overflow: overlay !important;
+  }
+
+  .art-projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    width: 100%;
   }
 }

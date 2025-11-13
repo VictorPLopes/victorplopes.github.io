@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { NgOptimizedImage, NgClass } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatDivider } from '@angular/material/divider';
 import { SocialItem } from './models/social-item';
@@ -9,7 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'pf-profile-sidebar',
-  imports: [NgOptimizedImage, MatCardModule, MatDivider, MatButtonModule, MatIcon, NgClass],
+  imports: [NgOptimizedImage, MatCardModule, MatDivider, MatButtonModule, MatIcon],
   templateUrl: './profile-sidebar.component.html',
   styleUrl: './profile-sidebar.component.scss',
 })

@@ -1,1 +1,43 @@
-<p>media-content works!</p>
+<mat-card appearance="outlined" class="media-card">
+  <a
+    [href]="url() ?? '#'"
+    class="content"
+    [target]="url() ? '_blank' : ''"
+  >
+    <div class="cover">
+      <img mat-card-image [ngSrc]="imageUrl()!" width="400" height="600" alt="Cover image" />
+    </div>
+    <div class="info">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title
+            ><b>{{ title() }}</b></mat-card-title
+          >
+          @if (subtitle()) {
+          <mat-card-subtitle>{{ subtitle() }}</mat-card-subtitle>
+          }
+        </mat-card-title-group>
+      </mat-card-header>
+      <mat-card-content>{{ description() }}</mat-card-content>
+      @if (tagsList() || url()) {
+      <mat-card-footer>
+        <div class="footer">
+          @if (tagsList()) {
+          <mat-chip-set>
+            @for (tag of tagsList(); track $index) {
+            <mat-chip>{{ tag }}</mat-chip>
+            }
+          </mat-chip-set>
+          } @if (url()) {
+          <mat-card-actions align="end">
+            <a mat-icon-button>
+              <mat-icon>open_in_new</mat-icon>
+            </a>
+          </mat-card-actions>
+          }
+        </div>
+      </mat-card-footer>
+      }
+    </div>
+  </a>
+</mat-card>
