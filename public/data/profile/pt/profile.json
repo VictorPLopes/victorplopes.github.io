@@ -1,0 +1,28 @@
+{
+  "name": "Victor Probio Lopes",
+  "avatarSrc": "https://avatars.githubusercontent.com/u/77900343",
+  "nickname": "VictorPL",
+  "role": "Dev. Full-stack (C#|.NET|TS|Angular|SQL) | Bacharelando em Engenharia da Computação",
+  "bio": "Analista Programador de 22 anos, entusiasta de tecnologia e às vezes um \"artista\"",
+  "github": "VictorPLopes",
+  "twitter": "VictorPL2003",
+  "linkedin": "victor-probio-lopes-021254281",
+  "customWebsites": [
+    {
+      "id": "artstation",
+      "label": "ArtStation",
+      "url": "https://artstation.com/victorplopes"
+    },
+    {
+      "id": "linktree",
+      "label": "Linktree",
+      "url": "https://linkt.ree/victorplopes"
+    },
+    {
+      "id": "polymorph",
+      "label": "Polymorph",
+      "url": "https://superhivemarket.com/creators/polymorph",
+      "style": "filled"
+    }
+  ]
+}

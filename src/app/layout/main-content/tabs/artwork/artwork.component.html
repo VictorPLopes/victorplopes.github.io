@@ -1,0 +1,10 @@
+@for (artProject of artProjectsList; track $index) {
+<pf-media-content
+  [title]="artProject.title"
+  [subtitle]="artProject.subtitle"
+  [imageUrl]="artProject.imageUrl"
+  [description]="artProject.description"
+  [url]="artProject.url"
+  [tags]="artProject.tags"
+/>
+}

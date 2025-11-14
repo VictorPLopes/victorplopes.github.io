@@ -6,6 +6,15 @@
 @use '@angular/material' as mat;
 @use './app/styles/theme.scss' as my-theme;
 
+:root {
+  @include mat.tabs-overrides(
+    (
+      active-indicator-shape: 3px 3px 0 0,
+      active-indicator-height: 3px,
+    )
+  );
+}
+
 html {
   @include mat.theme(
     (
@@ -22,18 +31,6 @@ html {
 
 ::-webkit-scrollbar {
   background-color: transparent;
-}
-
-[fitInkBarToContent],
-[ng-reflect-fit-ink-bar-to-content='true'] {
-  > .mat-mdc-tab-header {
-    @include mat.tabs-overrides(
-      (
-        active-indicator-shape: 3px 3px 0 0,
-        active-indicator-height: 3px,
-      )
-    );
-  }
 }
 
 body {

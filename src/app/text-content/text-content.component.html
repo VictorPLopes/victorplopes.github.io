@@ -1,13 +1,16 @@
-<mat-card appearance="outlined" class="media-card">
+<mat-card appearance="outlined" class="text-card" [class.no-image]="!imageUrl()">
   <a
     [href]="url() ?? '#'"
     class="content"
+    [class.no-image]="!imageUrl()"
     [target]="url() ? '_blank' : ''"
   >
+    @if (imageUrl()) {
     <div class="cover">
-      <img mat-card-image [ngSrc]="imageUrl()!" width="400" height="600" alt="Cover image" />
+      <img mat-card-image [ngSrc]="imageUrl()!" width="200" height="200" i18n-alt alt="Cover image" />
     </div>
-    <div class="info">
+    }
+    <div class="info" [class.no-image]="!imageUrl()">
       <mat-card-header>
         <mat-card-title-group>
           <mat-card-title

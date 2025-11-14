@@ -2,30 +2,30 @@
   <div class="sidebar-cell">
     <pf-profile-sidebar
       class="sidebar"
-      name="Your Name"
-      nickname="@Nickname"
-      avatarSrc="https://i.pravatar.cc/512"
-      role="Role"
-      bio="Short Bio | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia congue tortor consequat iaculis."
-      github="GitHub"
-      twitter="Twitter"
-      linkedin="LinkedIn"
-      [customWebsites]="[
-        { id: 1, label: 'Test', url: 'https://google.com' },
-        { id: 2, label: 'Test2', url: 'https://google.com' }
-      ]"
-      [socialButtonStyle]="'filled'"
+      [name]="myProfile.name"
+      [nickname]="myProfile.nickname"
+      [avatarSrc]="myProfile.avatarSrc"
+      i18n-role
+      [role]="myProfile.role"
+      i18n-bio
+      [bio]="myProfile.bio"
+      [github]="myProfile.github"
+      [twitter]="myProfile.twitter"
+      [linkedin]="myProfile.linkedin"
+      [customWebsites]="myProfile.customWebsites ?? []"
+      [socialButtonStyle]="'tonal'"
+      [maxExpandedLinks]="6"
     />
   </div>
   <div class="main-cell">
     <header>
-      <h1>Portfolio</h1>
+      <h1 i18n>Portfolio</h1>
       <pf-theme-picker />
     </header>
     <pf-main-content class="main" />
     <footer>
       <p>
-        Website created with <a href="https://angular.dev/">Angular</a> + <a href="https://www.typescriptlang.org/">TypeScript</a> | ©2025
+        <span i18n>Website created with</span>&nbsp;<a href="https://angular.dev/">Angular</a> + <a href="https://www.typescriptlang.org/">TypeScript</a> | ©2025
         <b>Victor Probio Lopes</b>
       </p>
     </footer>

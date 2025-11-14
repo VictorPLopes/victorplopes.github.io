@@ -1,0 +1,18 @@
+:host {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+// MOBILE OVERRIDES
+@media (max-width: 768px) {
+  .art-projects {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+}

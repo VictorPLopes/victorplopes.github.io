@@ -1,0 +1,13 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "9201103587777813545": "Portfolio",
+    "2497825918473006334": "Website created with",
+    "1726363342938046830": "About",
+    "1375565456534918361": " I am 22 years old Programmer Analyst at WriteSys Traffic Systems, where I am a full-stack developer and work with C# + .NET, TypeScript + Angular e SQL. I am in my last semester of a Bachelor's degree in Computer Engineering at the Federal Institute of São Paulo (Piracicaba campus), with practically all requirements finished and a {$START_BOLD_TEXT} GPA of 9.23/10 {$CLOSE_BOLD_TEXT}. {$LINE_BREAK}{$LINE_BREAK} I have always been passionate about technology and naturally curious, always willing to learn more and explore new innovations and trends. Within this passion, my affinity for programming stands out, especially with the C# language and the .NET framework, with which I have experience developing Web and Desktop applications. As an example, {$START_BOLD_TEXT} I worked on the development of a complete web system for managing inventory, products, employees, and orders {$CLOSE_BOLD_TEXT}. This open-source application, available on {$START_LINK}GitHub{$CLOSE_LINK}, was built with {$START_BOLD_TEXT} REST APIs in C# + ASP.NET and SQL Server on the back-end {$CLOSE_BOLD_TEXT}, and a {$START_BOLD_TEXT} responsive front-end in TypeScript + React and Bootstrap {$CLOSE_BOLD_TEXT}. ",
+    "7091571651222742304": "Projects",
+    "7553271888893131195": "Artwork",
+    "8493154674675875451": "Cover image",
+    "549973238102936732": "Profile summary"
+  }
+}

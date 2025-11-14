@@ -19,6 +19,7 @@ export class ProfileSidebarComponent {
   readonly nickname = input.required<string>();
   readonly role = input.required<string>();
   readonly bio = input.required<string>();
+  readonly maxExpandedLinks = input<number>(5);
   readonly github = input<string>();
   readonly twitter = input<string>();
   readonly linkedin = input<string>();
@@ -44,7 +45,7 @@ export class ProfileSidebarComponent {
       items.push({
         id: 'linkedin',
         label: 'LinkedIn',
-        url: `https://www.linkedin.com/${this.linkedin()}`,
+        url: `https://www.linkedin.com/in/${this.linkedin()}`,
         icon: 'linkedin',
       });
     }
@@ -109,10 +110,10 @@ export class ProfileSidebarComponent {
   });
 
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon('github', sanitizer.bypassSecurityTrustResourceUrl('github.svg'));
-    iconRegistry.addSvgIcon('twitter', sanitizer.bypassSecurityTrustResourceUrl('twitter.svg'));
-    iconRegistry.addSvgIcon('linkedin', sanitizer.bypassSecurityTrustResourceUrl('linkedin.svg'));
-    iconRegistry.addSvgIcon('instagram', sanitizer.bypassSecurityTrustResourceUrl('instagram.svg'));
-    iconRegistry.addSvgIcon('facebook', sanitizer.bypassSecurityTrustResourceUrl('facebook.svg'));
+    iconRegistry.addSvgIcon('github', sanitizer.bypassSecurityTrustResourceUrl('icons/github.svg'));
+    iconRegistry.addSvgIcon('twitter', sanitizer.bypassSecurityTrustResourceUrl('icons/twitter.svg'));
+    iconRegistry.addSvgIcon('linkedin', sanitizer.bypassSecurityTrustResourceUrl('icons/linkedin.svg'));
+    iconRegistry.addSvgIcon('instagram', sanitizer.bypassSecurityTrustResourceUrl('icons/instagram.svg'));
+    iconRegistry.addSvgIcon('facebook', sanitizer.bypassSecurityTrustResourceUrl('icons/facebook.svg'));
   }
 }
