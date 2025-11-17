@@ -1,21 +1,29 @@
 import { Component, computed, input } from '@angular/core';
-import { MatCardModule } from "@angular/material/card";
-import {MatChipsModule} from '@angular/material/chips';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
-import { NgOptimizedImage } from '@angular/common'
-import { MatIcon } from "@angular/material/icon";
+import { NgOptimizedImage } from '@angular/common';
+import { MatIcon } from '@angular/material/icon';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'pf-media-content',
-  imports: [MatCardModule, NgOptimizedImage, MatChipsModule, MatButtonModule, MatIcon],
+  imports: [
+    MatCardModule,
+    NgOptimizedImage,
+    MatChipsModule,
+    MatButtonModule,
+    MatIcon,
+    TranslocoPipe,
+  ],
   templateUrl: './media-content.component.html',
   styleUrl: './media-content.component.scss',
 })
 export class MediaContentComponent {
   readonly title = input.required<string>();
   readonly subtitle = input<string | undefined>();
-  readonly imageUrl = input.required<string>()
-  readonly description = input<string | undefined>("");
+  readonly imageUrl = input.required<string>();
+  readonly description = input<string | undefined>('');
   readonly url = input<string | undefined>();
   readonly tags = input<string[] | undefined>([]);
 

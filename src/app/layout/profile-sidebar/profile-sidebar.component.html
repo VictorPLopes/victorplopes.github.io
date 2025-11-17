@@ -1,4 +1,8 @@
-<aside class="card sidebar-card" role="complementary" aria-label="{{ 'profile-summary' | transloco }}">
+<aside
+  class="card sidebar-card"
+  role="complementary"
+  aria-label="{{ 'profile-summary' | transloco }}"
+>
   <div class="card-inner">
     <div class="personal-data">
       <h1 class="name">{{ name() }}</h1>
@@ -11,7 +15,11 @@
     </div>
     @if (socialItems()) {
     <mat-divider />
-    <nav aria-label="Social links" class="social" [class.many-links]="socialItems().length > maxExpandedLinks()">
+    <nav
+      aria-label="Social links"
+      class="social"
+      [class.many-links]="socialItems().length > maxExpandedLinks()"
+    >
       <div class="social-rows">
         @for (row of socialRows(); track $index) {
         <div

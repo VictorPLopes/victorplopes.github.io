@@ -6,10 +6,11 @@ import { SocialItem } from './models/social-item';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconRegistry, MatIcon } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'pf-profile-sidebar',
-  imports: [NgOptimizedImage, MatCardModule, MatDivider, MatButtonModule, MatIcon],
+  imports: [NgOptimizedImage, MatCardModule, MatDivider, MatButtonModule, MatIcon, TranslocoPipe],
   templateUrl: './profile-sidebar.component.html',
   styleUrl: './profile-sidebar.component.scss',
 })
@@ -111,9 +112,21 @@ export class ProfileSidebarComponent {
 
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
     iconRegistry.addSvgIcon('github', sanitizer.bypassSecurityTrustResourceUrl('icons/github.svg'));
-    iconRegistry.addSvgIcon('twitter', sanitizer.bypassSecurityTrustResourceUrl('icons/twitter.svg'));
-    iconRegistry.addSvgIcon('linkedin', sanitizer.bypassSecurityTrustResourceUrl('icons/linkedin.svg'));
-    iconRegistry.addSvgIcon('instagram', sanitizer.bypassSecurityTrustResourceUrl('icons/instagram.svg'));
-    iconRegistry.addSvgIcon('facebook', sanitizer.bypassSecurityTrustResourceUrl('icons/facebook.svg'));
+    iconRegistry.addSvgIcon(
+      'twitter',
+      sanitizer.bypassSecurityTrustResourceUrl('icons/twitter.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'linkedin',
+      sanitizer.bypassSecurityTrustResourceUrl('icons/linkedin.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'instagram',
+      sanitizer.bypassSecurityTrustResourceUrl('icons/instagram.svg')
+    );
+    iconRegistry.addSvgIcon(
+      'facebook',
+      sanitizer.bypassSecurityTrustResourceUrl('icons/facebook.svg')
+    );
   }
 }
