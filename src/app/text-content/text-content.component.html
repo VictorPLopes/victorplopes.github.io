@@ -7,7 +7,7 @@
   >
     @if (imageUrl()) {
     <div class="cover">
-      <img mat-card-image [ngSrc]="imageUrl()!" width="200" height="200" i18n-alt alt="Cover image" />
+      <img mat-card-image [ngSrc]="imageUrl()!" width="200" height="200" alt="{{ 'cover-image' | transloco }}" />
     </div>
     }
     <div class="info" [class.no-image]="!imageUrl()">

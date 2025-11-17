@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ProfileSidebarComponent } from "./profile-sidebar/profile-sidebar.component";
 import { MainContentComponent } from "./main-content/main-content.component";
 import { ThemePickerComponent } from "./theme-picker/theme-picker.component";
-import profile from "../../../public/data/profile/en-US/profile.json"
 import { Profile } from './profile-sidebar/models/profile';
+import profile from "../../../public/data/profile/en-US/profile.json";
 
 @Component({
   selector: 'pf-root',
@@ -16,6 +16,5 @@ import { Profile } from './profile-sidebar/models/profile';
   }
 })
 export class AppComponent {
-  //author = input.required<string>();
   myProfile: Profile = profile as unknown as Profile;
 }

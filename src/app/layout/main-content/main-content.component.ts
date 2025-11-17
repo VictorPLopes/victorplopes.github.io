@@ -10,6 +10,6 @@ import { RouterModule } from '@angular/router';
   styleUrl: './main-content.component.scss',
 })
 export class MainContentComponent {
-  links = ['about', 'projects', 'artwork']
+  links = ['about', 'projects', 'artwork'];
   activeLink = this.links[0];
 }

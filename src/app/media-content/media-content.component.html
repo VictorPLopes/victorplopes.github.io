@@ -5,7 +5,7 @@
     [target]="url() ? '_blank' : ''"
   >
     <div class="cover">
-      <img mat-card-image [ngSrc]="imageUrl()!" width="400" height="600" i18n-alt alt="Cover image" />
+      <img mat-card-image [ngSrc]="imageUrl()!" width="400" height="600" alt="{{ 'cover-image' | transloco }}" />
     </div>
     <div class="info">
       <mat-card-header>
