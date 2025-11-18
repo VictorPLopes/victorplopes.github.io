@@ -4,10 +4,11 @@ import {MatChipsModule} from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { NgOptimizedImage } from '@angular/common'
 import { MatIcon } from "@angular/material/icon";
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'pf-text-content',
-  imports: [MatCardModule, NgOptimizedImage, MatChipsModule, MatButtonModule, MatIcon],
+  imports: [MatCardModule, NgOptimizedImage, MatChipsModule, MatButtonModule, MatIcon, TranslocoPipe],
   templateUrl: './text-content.component.html',
   styleUrl: './text-content.component.scss',
 })
