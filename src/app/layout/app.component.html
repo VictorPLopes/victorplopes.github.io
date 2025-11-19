@@ -20,7 +20,25 @@
   <div class="main-cell">
     <header>
       <h1>{{ 'portfolio' | transloco }}</h1>
-      <pf-theme-picker />
+      <div class="options">
+        <mat-form-field>
+          <mat-label>Language</mat-label>
+          <mat-select disableRipple [(value)]="selectedLanguage">
+            @for (option of languages; track option) {
+            <mat-option [value]="option.value">
+              <mat-icon
+                matSuffix
+                [svgIcon]="option.value"
+                aria-hidden="false"
+                [attr.aria-label]="option.viewValue"
+              ></mat-icon>
+              {{ option.viewValue }}</mat-option
+            >
+            }
+          </mat-select>
+        </mat-form-field>
+        <pf-theme-picker />
+      </div>
     </header>
     <pf-main-content class="main" />
     <footer>
