@@ -1,5 +1,5 @@
 interface Language {
-  value: string;
-  viewValue: string;
-  icon: string;
+  id: string;
+  label: string;
+  icon?: string;
 }

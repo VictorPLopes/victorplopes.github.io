@@ -15,5 +15,8 @@
   "portfolio": "Portfolio",
   "profile-summary": "Profile summary",
   "skills": "Skills",
-  "website-created-with": "Website created with"
+  "website-created-with": "Website created with",
+  "language": "Language",
+  "english-us": "English (US)",
+  "portuguese": "Portuguese"
 }

@@ -1,0 +1,10 @@
+{
+    "en": {
+        "label": "english-us",
+        "icon": "icons/flags/us.svg"
+    },
+    "pt": {
+        "label": "portuguese",
+        "icon": "icons/flags/br.svg"
+    }
+}

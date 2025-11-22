@@ -1,14 +1,17 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslocoPipe } from '@jsverse/transloco';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { ProfileSidebarComponent } from './profile-sidebar/profile-sidebar.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { ThemePickerComponent } from './theme-picker/theme-picker.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelect, MatOption } from '@angular/material/select';
+import { MatSelect, MatOption, MatSelectChange, MatSelectTrigger } from '@angular/material/select';
 import { MatIconRegistry, MatIcon } from '@angular/material/icon';
 import { Profile } from './profile-sidebar/models/profile';
-import profile from '../../../public/data/profile/en-US/profile.json';
 import { DomSanitizer } from '@angular/platform-browser';
+import profile from '../../../public/data/profile/en-US/profile.json';
+import customLanguages from '../../../public/data/custom-languages.json';
+
+type AvailableLang = string | { id: string; label?: string };
 
 @Component({
   selector: 'pf-root',
@@ -21,6 +24,7 @@ import { DomSanitizer } from '@angular/platform-browser';
     MatSelect,
     MatOption,
     MatIcon,
+    MatSelectTrigger
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -30,19 +34,54 @@ import { DomSanitizer } from '@angular/platform-browser';
   },
 })
 export class AppComponent {
-  languages: Language[] = [
-    { value: 'en', viewValue: 'English (US)', icon: 'icons/us.svg' },
-    { value: 'pt', viewValue: 'Portuguese', icon: 'icons/br.svg' },
-  ];
-  selectedLanguage = this.languages[0].value;
+  selectedLanguage: string;
+  languages: Language[] = [];
+  translocoLanguages: string[] = [];
+
   myProfile: Profile = profile as unknown as Profile;
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    this.languages.forEach((language) => {
-      iconRegistry.addSvgIcon(
-        language.value,
-        sanitizer.bypassSecurityTrustResourceUrl(language.icon)
-      );
+  constructor(
+    iconRegistry: MatIconRegistry,
+    sanitizer: DomSanitizer,
+    private translocoService: TranslocoService
+  ) {
+    this.selectedLanguage = this.translocoService.getDefaultLang();
+
+    const availableLangs = this.translocoService.getAvailableLangs() as AvailableLang[];
+
+    const registeredIcons = new Set<string>();
+
+    const normalize = (l: AvailableLang) => {
+      const id = typeof l === 'string' ? l : l.id;
+      const providedLabel = typeof l === 'string' ? undefined : l.label;
+      const custom = (customLanguages as Record<string, { label: string; icon?: string }>)[id];
+
+      const label = custom?.label ?? providedLabel ?? id;
+      const icon = custom?.icon;
+
+      return { id, label, icon } as Language;
+    };
+
+    const processed = availableLangs.map(normalize).map(lang => {
+      if (lang.icon && !registeredIcons.has(lang.id)) {
+        iconRegistry.addSvgIcon(lang.id, sanitizer.bypassSecurityTrustResourceUrl(lang.icon));
+        registeredIcons.add(lang.id);
+      }
+      return lang;
     });
+
+    this.languages = processed;
+    this.translocoLanguages = processed.map(l => l.id);
+  }
+
+  onChange(event: MatSelectChange): void {
+    const langCode = event.value;
+
+    this.translocoService.setActiveLang(langCode);
+    this.selectedLanguage = langCode;
+  }
+
+  getSelectedLabel(): string {
+    return this.languages.find(l => l.id === this.selectedLanguage)?.label ?? this.selectedLanguage;
   }
 }
