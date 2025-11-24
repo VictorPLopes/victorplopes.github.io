@@ -45,7 +45,7 @@ export class AppComponent {
     sanitizer: DomSanitizer,
     private translocoService: TranslocoService
   ) {
-    this.selectedLanguage = this.translocoService.getDefaultLang();
+    this.selectedLanguage = this.translocoService.getActiveLang();
 
     const availableLangs = this.translocoService.getAvailableLangs() as AvailableLang[];
 

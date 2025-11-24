@@ -5,12 +5,12 @@ import {
   isDevMode,
 } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco } from '@jsverse/transloco';
 import { provideTranslocoLocale } from '@jsverse/transloco-locale';
+import { provideTranslocoPersistLang, cookiesStorage } from '@jsverse/transloco-persist-lang';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -33,6 +33,11 @@ export const appConfig: ApplicationConfig = {
       langToLocaleMapping: {
         en: 'en-US',
         pt: 'pt-BR',
+      },
+    }),
+    provideTranslocoPersistLang({
+      storage: {
+        useValue: cookiesStorage(),
       },
     }),
   ],
