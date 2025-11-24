@@ -1,20 +1,19 @@
 import { Routes } from '@angular/router';
-import { AboutComponent } from './layout/main-content/tabs/about/about.component';
-import { ProjectsComponent } from './layout/main-content/tabs/projects/projects.component';
-import { ArtworkComponent } from './layout/main-content/tabs/artwork/artwork.component';
+import { provideTranslocoScope } from '@jsverse/transloco';
 
 export const routes: Routes = [
   {
     path: "about",
-    component: AboutComponent
+    loadComponent: () => import('./layout/main-content/tabs/about/about.component').then((m) => m.AboutComponent),
+    providers: [provideTranslocoScope('about')]
   },
   {
     path: "projects",
-    component: ProjectsComponent
+    loadComponent: () => import('./layout/main-content/tabs/projects/projects.component').then((m) => m.ProjectsComponent)
   },
   {
     path: "artwork",
-    component: ArtworkComponent
+    loadComponent: () => import('./layout/main-content/tabs/artwork/artwork.component').then((m) => m.ArtworkComponent)
   },
   {
     path: "",
