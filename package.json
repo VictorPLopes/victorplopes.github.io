@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "transloco:optimize": "transloco-optimize dist/lokalise-transloco-tutorial/browser/assets/i18n",
+    "build:prod": "ng build --aot && npm run transloco:optimize"
   },
   "prettier": {
     "printWidth": 100,
@@ -34,6 +36,7 @@
     "@jsverse/transloco-locale": "^8.2.0",
     "@jsverse/transloco-persist-lang": "^8.2.0",
     "@jsverse/transloco-schematics": "^8.1.0",
+    "file-system": "^1.2.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -43,6 +46,7 @@
     "@angular/cli": "^20.3.7",
     "@angular/compiler-cli": "^20.3.0",
     "@angular/localize": "^20.3.10",
+    "@jsverse/transloco-optimize": "^8.2.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.9.0",
     "karma": "~6.4.0",

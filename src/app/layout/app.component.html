@@ -1,25 +1,46 @@
 <div class="layout">
   <div class="sidebar-cell">
-    <pf-profile-sidebar class="sidebar" [name]="myProfile.name" [nickname]="myProfile.nickname"
-      [avatarSrc]="myProfile.avatarSrc" i18n-role [role]="myProfile.role" i18n-bio [bio]="myProfile.bio"
-      [github]="myProfile.github" [twitter]="myProfile.twitter" [linkedin]="myProfile.linkedin"
-      [customWebsites]="myProfile.customWebsites ?? []" [socialButtonStyle]="'tonal'" [maxExpandedLinks]="6" />
+    <pf-profile-sidebar
+      class="sidebar"
+      [name]="myProfile.name"
+      [nickname]="myProfile.nickname"
+      [avatarSrc]="myProfile.avatarSrc"
+      i18n-role
+      [role]="myProfile.role"
+      i18n-bio
+      [bio]="myProfile.bio"
+      [github]="myProfile.github"
+      [twitter]="myProfile.twitter"
+      [linkedin]="myProfile.linkedin"
+      [customWebsites]="myProfile.customWebsites ?? []"
+      [socialButtonStyle]="'tonal'"
+      [maxExpandedLinks]="6"
+    />
   </div>
   <div class="main-cell">
     <header>
       <h1>{{ 'portfolio' | transloco }}</h1>
       <div class="options">
         <mat-form-field>
-          <mat-label>{{'language' | transloco}}</mat-label>
-          <mat-select disableRipple [(value)]="selectedLanguage" (selectionChange)="onChange($event)">
+          <mat-label>{{ 'language' | transloco }}</mat-label>
+          <mat-select
+            disableRipple
+            [(value)]="selectedLanguage"
+            (selectionChange)="onChange($event)"
+          >
             <mat-select-trigger>
               {{ getSelectedLabel() | transloco }}
             </mat-select-trigger>
             @for (option of languages; track option) {
             <mat-option [value]="option.id">
-              <mat-icon matSuffix [svgIcon]="option.id" aria-hidden="false"
-                [attr.aria-label]="option.label | transloco"></mat-icon>
-              {{ option.label | transloco }}</mat-option>
+              <mat-icon
+                matSuffix
+                [svgIcon]="option.id"
+                aria-hidden="false"
+                [attr.aria-label]="option.label | transloco"
+              ></mat-icon>
+              {{ option.label | transloco }}</mat-option
+            >
             }
           </mat-select>
         </mat-form-field>
@@ -29,7 +50,8 @@
     <pf-main-content class="main" />
     <footer>
       <p>
-        <span>{{ 'website-created-with' | transloco }}</span>&nbsp;<a href="https://angular.dev/">Angular</a> +
+        <span>{{ 'website-created-with' | transloco }}</span
+        >&nbsp;<a href="https://angular.dev/">Angular</a> +
         <a href="https://www.typescriptlang.org/">TypeScript</a> | ©2025
         <b>Victor Probio Lopes</b>
       </p>

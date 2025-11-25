@@ -1,14 +1,27 @@
 import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { map, Observable } from 'rxjs';
+import { provideTranslocoScope, TranslocoService } from '@jsverse/transloco';
 import { MediaContentComponent } from '../../../../media-content/media-content.component';
 import { MediaItem } from '../../../../media-content/models/media-item';
-import artProjects from '../../../../../../public/data/artwork/en-US/artwork.json';
 
 @Component({
   selector: 'pf-artwork',
-  imports: [MediaContentComponent],
+  imports: [MediaContentComponent, AsyncPipe],
   templateUrl: './artwork.component.html',
   styleUrl: './artwork.component.scss',
 })
 export class ArtworkComponent {
-  artProjectsList: MediaItem[] = artProjects;
+  artProjectsList$: Observable<MediaItem[]>;
+
+  constructor(private translocoService: TranslocoService) {
+    this.artProjectsList$ = this.translocoService.selectTranslation('artwork').pipe(
+      map((a: any) => {
+        if (!a) return [];
+        if (Array.isArray(a)) return a;
+        if (Array.isArray(a.artwork)) return a.artwork;
+        return [];
+      })
+    );
+  }
 }

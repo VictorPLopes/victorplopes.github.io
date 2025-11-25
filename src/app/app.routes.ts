@@ -9,11 +9,13 @@ export const routes: Routes = [
   },
   {
     path: "projects",
-    loadComponent: () => import('./layout/main-content/tabs/projects/projects.component').then((m) => m.ProjectsComponent)
+    loadComponent: () => import('./layout/main-content/tabs/projects/projects.component').then((m) => m.ProjectsComponent),
+    providers: [provideTranslocoScope('projects')]
   },
   {
     path: "artwork",
-    loadComponent: () => import('./layout/main-content/tabs/artwork/artwork.component').then((m) => m.ArtworkComponent)
+    loadComponent: () => import('./layout/main-content/tabs/artwork/artwork.component').then((m) => m.ArtworkComponent),
+    providers: [provideTranslocoScope('artwork')]
   },
   {
     path: "",

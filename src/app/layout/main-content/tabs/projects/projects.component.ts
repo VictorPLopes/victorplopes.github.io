@@ -1,15 +1,27 @@
 import { Component } from '@angular/core';
-import { TextContentComponent } from "../../../../text-content/text-content.component";
+import { AsyncPipe } from '@angular/common';
+import { map, Observable } from 'rxjs';
+import { provideTranslocoScope, TranslocoService } from '@jsverse/transloco';
+import { TextContentComponent } from '../../../../text-content/text-content.component';
 import { TextItem } from '../../../../text-content/models/text-item';
-import projects from '../../../../../../public/data/projects/en-US/projects.json';
-
 
 @Component({
   selector: 'pf-projects',
-  imports: [TextContentComponent],
+  imports: [TextContentComponent, AsyncPipe],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
 })
 export class ProjectsComponent {
-  projectsList: TextItem[] = projects;
+  projectsList$: Observable<TextItem[]>;
+
+  constructor(private translocoService: TranslocoService) {
+    this.projectsList$ = this.translocoService.selectTranslation('projects').pipe(
+      map((p: any) => {
+        if (!p) return [];
+        if (Array.isArray(p)) return p;
+        if (Array.isArray(p.projects)) return p.projects;
+        return [];
+      })
+    );
+  }
 }

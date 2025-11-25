@@ -1,4 +1,5 @@
-@for (artProject of artProjectsList; track $index) {
+@let artProjectsList = artProjectsList$ | async; @for (artProject of artProjectsList; track $index)
+{
 <pf-media-content
   [title]="artProject.title"
   [subtitle]="artProject.subtitle"

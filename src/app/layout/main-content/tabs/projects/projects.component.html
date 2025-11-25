@@ -1,4 +1,4 @@
-@for (project of projectsList; track $index) {
+@let projectsList = projectsList$ | async; @for (project of projectsList; track $index) {
 <pf-text-content
   [title]="project.title"
   [subtitle]="project.subtitle"

@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
+import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import { provideTranslocoScope, TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { ProfileSidebarComponent } from './profile-sidebar/profile-sidebar.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { ThemePickerComponent } from './theme-picker/theme-picker.component';
@@ -8,7 +8,7 @@ import { MatSelect, MatOption, MatSelectChange, MatSelectTrigger } from '@angula
 import { MatIconRegistry, MatIcon } from '@angular/material/icon';
 import { Profile } from './profile-sidebar/models/profile';
 import { DomSanitizer } from '@angular/platform-browser';
-import profile from '../../../public/data/profile/en-US/profile.json';
+import { Subscription } from 'rxjs';
 import customLanguages from '../../../public/data/custom-languages.json';
 
 type AvailableLang = string | { id: string; label?: string };
@@ -24,7 +24,7 @@ type AvailableLang = string | { id: string; label?: string };
     MatSelect,
     MatOption,
     MatIcon,
-    MatSelectTrigger
+    MatSelectTrigger,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -33,12 +33,15 @@ type AvailableLang = string | { id: string; label?: string };
     class: 'pf-root',
   },
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   selectedLanguage: string;
   languages: Language[] = [];
   translocoLanguages: string[] = [];
 
-  myProfile: Profile = profile as unknown as Profile;
+  myProfile!: Profile;
+
+  private sub = new Subscription();
+
 
   constructor(
     iconRegistry: MatIconRegistry,
@@ -62,7 +65,7 @@ export class AppComponent {
       return { id, label, icon } as Language;
     };
 
-    const processed = availableLangs.map(normalize).map(lang => {
+    const processed = availableLangs.map(normalize).map((lang) => {
       if (lang.icon && !registeredIcons.has(lang.id)) {
         iconRegistry.addSvgIcon(lang.id, sanitizer.bypassSecurityTrustResourceUrl(lang.icon));
         registeredIcons.add(lang.id);
@@ -71,7 +74,17 @@ export class AppComponent {
     });
 
     this.languages = processed;
-    this.translocoLanguages = processed.map(l => l.id);
+    this.translocoLanguages = processed.map((l) => l.id);
+
+    this.sub.add(
+      this.translocoService.selectTranslation('profile').subscribe((profile: any) => {
+        this.myProfile = profile;
+      })
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
   onChange(event: MatSelectChange): void {
@@ -82,6 +95,8 @@ export class AppComponent {
   }
 
   getSelectedLabel(): string {
-    return this.languages.find(l => l.id === this.selectedLanguage)?.label ?? this.selectedLanguage;
+    return (
+      this.languages.find((l) => l.id === this.selectedLanguage)?.label ?? this.selectedLanguage
+    );
   }
 }
