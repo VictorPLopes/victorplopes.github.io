@@ -1,5 +1,9 @@
 <div class="layout">
   <div class="sidebar-cell">
+    <header class="mobile-header">
+      <pf-options aria-hidden="true"></pf-options>
+    </header>
+
     <pf-profile-sidebar
       class="sidebar"
       [name]="myProfile.name"
@@ -17,37 +21,15 @@
       [maxExpandedLinks]="6"
     />
   </div>
+
   <div class="main-cell">
     <header>
       <h1>{{ 'portfolio' | transloco }}</h1>
-      <div class="options">
-        <mat-form-field>
-          <mat-label>{{ 'language' | transloco }}</mat-label>
-          <mat-select
-            disableRipple
-            [(value)]="selectedLanguage"
-            (selectionChange)="onChange($event)"
-          >
-            <mat-select-trigger>
-              {{ getSelectedLabel() | transloco }}
-            </mat-select-trigger>
-            @for (option of languages; track option) {
-            <mat-option [value]="option.id">
-              <mat-icon
-                matSuffix
-                [svgIcon]="option.id"
-                aria-hidden="false"
-                [attr.aria-label]="option.label | transloco"
-              ></mat-icon>
-              {{ option.label | transloco }}</mat-option
-            >
-            }
-          </mat-select>
-        </mat-form-field>
-        <pf-theme-picker />
-      </div>
+      <pf-options class="desktop-header"></pf-options>
     </header>
+
     <pf-main-content class="main" />
+
     <footer>
       <p>
         <span>{{ 'website-created-with' | transloco }}</span

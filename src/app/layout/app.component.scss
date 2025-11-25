@@ -34,12 +34,6 @@
         margin: 0.5rem 0 0 0;
       }
     }
-    .options {
-      display: flex;
-      flex-direction: row;
-      column-gap: 0.25rem;
-      align-items: baseline;
-    }
   }
 
   .main-cell > .main {
@@ -50,6 +44,13 @@
     display: flex;
     flex-direction: column;
   }
+}
+
+.mobile-header {
+  display: none;
+}
+.desktop-header {
+  display: block;
 }
 
 // MEDIUM SCREENS OVERRIDES
@@ -79,5 +80,22 @@
     .main-cell {
       min-height: 0;
     }
+
+    .sidebar-cell {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 0.5rem;
+
+      header {
+        justify-self: end;
+      }
+    }
+  }
+
+  .mobile-header {
+    display: block;
+  }
+  .desktop-header {
+    display: none;
   }
 }
