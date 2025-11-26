@@ -4,14 +4,6 @@
   "newProjectRoot": "projects",
   "projects": {
     "portfolio": {
-      "i18n": {
-        "sourceLocale": "en-US",
-        "locales": {
-          "pt": {
-            "translation": "src/locale/messages.pt.json"
-          }
-        }
-      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -25,9 +17,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "localize": true,
+            "outputPath": "dist/portfolio",
             "browser": "src/main.ts",
-            "polyfills": ["zone.js", "@angular/localize/init"],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -39,9 +31,6 @@
             "styles": ["src/app/styles/theme.scss", "src/styles.scss"]
           },
           "configurations": {
-            "pt": {
-              "localize": ["pt"]
-            },
             "production": {
               "budgets": [
                 {
@@ -86,7 +75,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing", "@angular/localize/init"],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -97,6 +86,9 @@
             ],
             "styles": ["src/styles.scss"]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
