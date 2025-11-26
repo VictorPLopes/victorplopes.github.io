@@ -14,7 +14,8 @@ p {
 
 .mdc-list-item {
   p {
-    font: var(--mat-sys-body-medium);
+    font: var(--mat-sys-body-small);
+    text-wrap: wrap;
     margin: 0;
   }
 }
