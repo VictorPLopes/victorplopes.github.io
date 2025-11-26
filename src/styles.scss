@@ -22,7 +22,10 @@ html {
         primary: my-theme.$primary-palette,
         tertiary: my-theme.$tertiary-palette,
       ),
-      typography: Archivo,
+      typography: (
+        plain-family: "Be Vietnam Pro",
+        brand-family: "Archivo Narrow",
+      ),
       density: 0,
     )
   );
@@ -45,7 +48,6 @@ body {
   background-color: var(--mat-sys-surface-container-low);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-  font-family: Archivo, Roboto, 'Helvetica Neue', sans-serif;
 
   background-size: 40px 40px;
   // Dotted grid:
@@ -71,6 +73,22 @@ body {
 
 h1 {
   margin: 1rem 0 1rem 0;
+  font-family: var(--mat-sys-display-large-font);
+}
+h2 {
+  font-family: var(--mat-sys-display-medium-font);
+}
+h3 {
+  font-family: var(--mat-sys-display-small-font);
+}
+h4 {
+  font-family: var(--mat-sys-headline-large-font);
+}
+h5 {
+  font-family: var(--mat-sys-headline-medium-font);
+}
+h6 {
+  font-family: var(--mat-sys-headline-small-font);
 }
 
 .card {

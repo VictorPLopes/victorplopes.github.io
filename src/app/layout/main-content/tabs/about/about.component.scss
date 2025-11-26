@@ -9,12 +9,12 @@
 }
 
 p {
-  font-size: 12pt;
-  text-wrap: wrap;
+  font: var(--mat-sys-body-large);
 }
 
 .mdc-list-item {
   p {
+    font: var(--mat-sys-body-medium);
     margin: 0;
   }
 }

@@ -9,14 +9,7 @@
 }
 
 p {
-  font-size: 12pt;
-  text-wrap: wrap;
-}
-
-.mdc-list-item {
-  p {
-    margin: 0;
-  }
+  font: var(--mat-sys-body-large);
 }
 
 .mdc-list {
