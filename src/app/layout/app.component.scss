@@ -50,7 +50,7 @@
   display: none;
 }
 .desktop-header {
-  display: block;
+  display: flex;
 }
 
 // MEDIUM SCREENS OVERRIDES
@@ -93,7 +93,11 @@
   }
 
   .mobile-header {
-    display: block;
+    display: flex;
+    width: 100%;
+    pf-options {
+      width: 100%;
+    }
   }
   .desktop-header {
     display: none;

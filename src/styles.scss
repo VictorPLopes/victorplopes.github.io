@@ -96,8 +96,8 @@ h6 {
 .card {
   background: var(--mat-sys-surface);
   border-radius: var(--mat-sys-corner-medium);
-  border: 1px solid var(--mat-sys-outline);
-  //box-shadow: var(--mat-sys-level1);
+  border: 0.075rem solid var(--mat-sys-outline);
+  box-shadow: var(--mat-sys-level3);
   overflow: hidden;
   height: 100%;
 
