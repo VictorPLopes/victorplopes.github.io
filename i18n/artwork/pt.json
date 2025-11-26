@@ -1,0 +1,74 @@
+{
+  "artwork": [
+    {
+      "title": "Horizontes em Óleo",
+      "subtitle": "Pinturas de paisagem em grande escala",
+      "imageUrl": "https://picsum.photos/400/600?random=1",
+      "description": "Uma série de pinturas a óleo que explora luz e profundidade atmosférica em costas imaginadas. Impasto espesso e camadas de veladura criam presença tátil.",
+      "url": "https://example.com/oil-horizons",
+      "tags": ["Pintura", "Paisagem", "Óleo"]
+    },
+    {
+      "title": "Ruas de Néon",
+      "subtitle": "Paisagens urbanas digitais ao anoitecer",
+      "imageUrl": "https://picsum.photos/402/601?random=2",
+      "description": "Cenas renderizadas das noites urbanas onde reflexos de néon e superfícies molhadas encontram composição pictórica. Combina texturas fotorrealistas com paletas estilizadas.",
+      "tags": ["Digital", "Cidade", "Ilustração"]
+    },
+    {
+      "title": "Escultura do Solstício",
+      "imageUrl": "https://picsum.photos/399/598?random=3",
+      "description": "Fotografias que documentam um conjunto de esculturas modulares organizadas para estudos de luz sazonal. Obras pensadas para serem vistas em sequência.",
+      "tags": ["Escultura", "Fotografia"]
+    },
+    {
+      "title": "Tinta & Papel",
+      "subtitle": "Desenhos e estudos tradicionais",
+      "imageUrl": "https://picsum.photos/401/600?random=4",
+      "description": "Coleção de estudos em carvão e tinta com foco em gesto, economia de traço e marca expressiva.",
+      "url": "https://example.com/ink-and-paper"
+    },
+    {
+      "title": "Sonata Cromática",
+      "subtitle": "Ensaios visuais sobre música e cor",
+      "imageUrl": "https://picsum.photos/397/603?random=5",
+      "description": "Peças em técnica mista que traduzem estruturas musicais em relações de cor e ritmos composicionais.",
+      "tags": ["Mista", "Música", "Conceito"]
+    },
+    {
+      "title": "Sonhos Poligonais",
+      "subtitle": "Vignettes 3D low-poly",
+      "imageUrl": "https://picsum.photos/403/599?random=6",
+      "description": "Pequenas cenas 3D que enfatizam silhueta e geometria simplificada para evocar humor e narrativa.",
+      "url": "https://example.com/polygon-dreams",
+      "tags": ["3D", "Render", "Conceito"]
+    },
+    {
+      "title": "Estudo de Movimento",
+      "imageUrl": "https://picsum.photos/400/602?random=7",
+      "description": "Loops de animação curtos que exploram peso, tempo e movimento secundário. Apresentado como trechos de vídeo e GIFs.",
+      "tags": ["Animação", "Estudo"]
+    },
+    {
+      "title": "Retratos do Silêncio",
+      "subtitle": "Retratos pintados íntimos",
+      "imageUrl": "https://picsum.photos/405/605?random=8",
+      "description": "Série de retratos em pequeno formato com paletas suaves, focando em expressões candidas e gestos silenciosos.",
+      "url": "https://example.com/portraits-of-silence",
+      "tags": ["Pintura", "Retrato"]
+    },
+    {
+      "title": "Arcádia Conceitual",
+      "subtitle": "Arte conceitual ambiental",
+      "imageUrl": "https://picsum.photos/398/600?random=9",
+      "description": "Pinturas conceituais e thumbnails para construção de mundo — flora, arquitetura e estudos atmosféricos para cenários imersivos."
+    },
+    {
+      "title": "Tapeçaria Aurora",
+      "subtitle": "Padrões têxteis e tramas digitais",
+      "imageUrl": "https://picsum.photos/404/598?random=10",
+      "description": "Explorações de padrão destinadas à produção têxtil: repetições, variantes de cor e mockups de textura para tecelagem.",
+      "tags": ["Têxteis", "Padrão", "Design"]
+    }
+  ]
+}
