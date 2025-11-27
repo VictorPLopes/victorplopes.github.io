@@ -136,7 +136,7 @@ h6 {
 .card {
   background: var(--mat-sys-surface-container-highest);
   border-radius: var(--mat-sys-corner-medium);
-  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 80%, transparent);
+  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent);
   @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
     background: color-mix(in srgb, var(--mat-sys-surface-container-highest) 20%, transparent);
     -webkit-backdrop-filter: blur(16px);
@@ -166,20 +166,51 @@ h6 {
 
 .mdc-text-field--filled {
   border-radius: var(--mat-sys-corner-medium) !important;
-  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 80%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent) !important;
 }
 
 .text-card,
 .media-card {
   background: var(--mat-sys-surface) !important;
   border-radius: var(--mat-sys-corner-medium) !important;
-  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 80%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent) !important;
   @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
     background: color-mix(in srgb, var(--mat-sys-surface) 20%, transparent) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     backdrop-filter: blur(16px) !important;
   }
   box-shadow: var(--mat-sys-level1) !important;
+}
+
+.card::before,
+.mdc-text-field--filled:not(.mdc-text-field--disabled)::before,
+.text-card::before,
+.media-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent) !important;
+}
+
+.card::after,
+.mdc-text-field--filled:not(.mdc-text-field--disabled)::after,
+.text-card::after,
+.media-card::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 1px !important;
+  height: 100% !important;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.8),
+    transparent,
+    rgba(255, 255, 255, 0.3)
+  ) !important;
 }
 
 // MOBILE OVERRIDES

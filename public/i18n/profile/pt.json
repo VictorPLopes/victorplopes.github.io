@@ -11,12 +11,14 @@
     {
       "id": "artstation",
       "label": "ArtStation",
-      "url": "https://artstation.com/victorplopes"
+      "url": "https://artstation.com/victorplopes",
+      "icon": "icons/artstation.svg"
     },
     {
       "id": "linktree",
       "label": "Linktree",
-      "url": "https://linkt.ree/victorplopes"
+      "url": "https://linkt.ree/victorplopes",
+      "icon": "icons/linktree.svg"
     },
     {
       "id": "polymorph",

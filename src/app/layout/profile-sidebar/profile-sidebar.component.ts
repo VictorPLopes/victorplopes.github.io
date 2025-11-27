@@ -1,16 +1,24 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, computed, effect, input } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { MatDivider } from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 import { SocialItem } from './models/social-item';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconRegistry, MatIcon } from '@angular/material/icon';
+import { MatIconRegistry, MatIconModule } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'pf-profile-sidebar',
-  imports: [NgOptimizedImage, MatCardModule, MatDivider, MatButtonModule, MatIcon, TranslocoPipe],
+  standalone: true,
+  imports: [
+    NgOptimizedImage,
+    MatCardModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatIconModule,
+    TranslocoPipe,
+  ],
   templateUrl: './profile-sidebar.component.html',
   styleUrl: './profile-sidebar.component.scss',
 })
@@ -39,7 +47,7 @@ export class ProfileSidebarComponent {
         id: 'github',
         label: 'GitHub',
         url: `https://www.github.com/${this.github()}`,
-        icon: 'github',
+        icon: 'icons/github.svg',
       });
     }
     if (this.linkedin()) {
@@ -47,7 +55,7 @@ export class ProfileSidebarComponent {
         id: 'linkedin',
         label: 'LinkedIn',
         url: `https://www.linkedin.com/in/${this.linkedin()}`,
-        icon: 'linkedin',
+        icon: 'icons/linkedin.svg',
       });
     }
     if (this.twitter()) {
@@ -55,7 +63,7 @@ export class ProfileSidebarComponent {
         id: 'twitter',
         label: 'Twitter ("X")',
         url: `https://www.x.com/${this.twitter()}`,
-        icon: 'twitter',
+        icon: 'icons/twitter.svg',
       });
     }
     if (this.instagram()) {
@@ -63,7 +71,7 @@ export class ProfileSidebarComponent {
         id: 'instagram',
         label: 'Instagram',
         url: `https://www.instagram.com/${this.instagram()}`,
-        icon: 'instagram',
+        icon: 'icons/instagram.svg',
       });
     }
     if (this.facebook()) {
@@ -71,11 +79,10 @@ export class ProfileSidebarComponent {
         id: 'facebook',
         label: 'Facebook',
         url: `https://www.facebook.com/${this.facebook()}`,
-        icon: 'facebook',
+        icon: 'icons/facebook.svg',
       });
     }
 
-    // add custom websites (preserve whatever order you want)
     for (const w of this.customWebsites() ?? []) {
       items.push({
         id: w.id ?? w.url,
@@ -94,11 +101,10 @@ export class ProfileSidebarComponent {
     const n = items.length;
     if (n === 0) return [];
 
-    const maxCols = 3; // prefer up to 3 columns per row
-    // Compute row count so each row has 2 or 3 items when possible:
+    const maxCols = 3;
     const rowsCount = Math.max(1, Math.ceil(n / maxCols));
     const base = Math.floor(n / rowsCount);
-    const extra = n % rowsCount; // first extra rows get one extra item
+    const extra = n % rowsCount;
 
     const rows: SocialItem[][] = [];
     let idx = 0;
@@ -110,23 +116,21 @@ export class ProfileSidebarComponent {
     return rows;
   });
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon('github', sanitizer.bypassSecurityTrustResourceUrl('icons/github.svg'));
-    iconRegistry.addSvgIcon(
-      'twitter',
-      sanitizer.bypassSecurityTrustResourceUrl('icons/twitter.svg')
-    );
-    iconRegistry.addSvgIcon(
-      'linkedin',
-      sanitizer.bypassSecurityTrustResourceUrl('icons/linkedin.svg')
-    );
-    iconRegistry.addSvgIcon(
-      'instagram',
-      sanitizer.bypassSecurityTrustResourceUrl('icons/instagram.svg')
-    );
-    iconRegistry.addSvgIcon(
-      'facebook',
-      sanitizer.bypassSecurityTrustResourceUrl('icons/facebook.svg')
-    );
+  private registered = new Set<string>();
+
+  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+    effect(() => {
+      const items = this.socialItems();
+      for (const item of items) {
+        if (!item.icon) continue;
+        const name = item.id?.toString() ?? item.url;
+        if (this.registered.has(name)) continue;
+
+        const url = item.icon.endsWith('.svg') ? item.icon : `${item.icon}.svg`;
+
+        this.iconRegistry.addSvgIcon(name, this.sanitizer.bypassSecurityTrustResourceUrl(url));
+        this.registered.add(name);
+      }
+    });
   }
 }
