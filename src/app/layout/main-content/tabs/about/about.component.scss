@@ -8,6 +8,11 @@
   );
 }
 
+p {
+  font: var(--mat-sys-body-large);
+  letter-spacing: var(--mat-sys-body-large-tracking);
+}
+
 .mdc-list-item {
   p {
     font: var(--mat-sys-body-large);
