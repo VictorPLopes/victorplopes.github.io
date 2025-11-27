@@ -8,13 +8,10 @@
   );
 }
 
-p {
-  font: var(--mat-sys-body-large);
-}
-
 .mdc-list-item {
   p {
-    font: var(--mat-sys-body-small);
+    font: var(--mat-sys-body-large);
+    letter-spacing: var(--mat-sys-body-large-tracking);
     text-wrap: wrap;
     margin: 0;
   }

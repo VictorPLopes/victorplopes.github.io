@@ -1,17 +1,4 @@
-@use '@angular/material' as mat;
-
-:host {
-  @include mat.list-overrides(
-    (
-      list-item-one-line-container-height: auto,
-    )
-  );
-}
-
 p {
   font: var(--mat-sys-body-large);
-}
-
-.mdc-list {
-  padding-top: 0;
+  letter-spacing: var(--mat-sys-body-large-tracking);
 }

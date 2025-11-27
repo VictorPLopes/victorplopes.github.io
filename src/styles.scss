@@ -23,8 +23,8 @@ html {
         tertiary: my-theme.$tertiary-palette,
       ),
       typography: (
-        plain-family: "Be Vietnam Pro",
-        brand-family: "Archivo Narrow",
+        plain-family: 'Be Vietnam Pro',
+        brand-family: 'Archivo Narrow',
       ),
       density: 0,
     )
@@ -45,18 +45,49 @@ body {
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface-container-low);
+  background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
+  letter-spacing: var(--mat-sys-body-medium-tracking);
 
-  background-size: 2.5rem 2.5rem;
-  background-position: 0 0, 1.25rem 1.25rem;
   // Dotted grid:
-  background-image: radial-gradient(circle at center, var(--mat-sys-outline-variant) 0.075rem, transparent 0),
-  radial-gradient(circle at center, var(--mat-sys-outline-variant) 0.075rem, transparent 0)
-  // Line grid
-  //background-image: linear-gradient(to right, var(--mat-sys-outline-variant) 1px, transparent 1px),
-  //linear-gradient(to bottom, var(--mat-sys-outline-variant) 1px, transparent 1px);
+  background-image:
+    // Radial gradients:
+    radial-gradient(
+      100% 50% at 50% 0%,
+      color-mix(in srgb, var(--mat-sys-primary) 20%, transparent) 0%,
+      color-mix(in srgb, var(--mat-sys-primary) 0%, transparent) 50%,
+      color-mix(in srgb, var(--mat-sys-primary) 0%, transparent) 100%
+    ),
+    radial-gradient(
+      100% 50% at 50% 100%,
+      color-mix(in srgb, var(--mat-sys-primary) 15%, transparent) 0%,
+      color-mix(in srgb, var(--mat-sys-primary) 0%, transparent) 50%,
+      color-mix(in srgb, var(--mat-sys-primary) 0%, transparent) 100%
+    ),
+    radial-gradient(circle at center, var(--mat-sys-outline-variant) 0.075rem, transparent 0),
+    radial-gradient(circle at center, var(--mat-sys-outline-variant) 0.075rem, transparent 0);
+
+  background-size:
+  // Radial gradients:
+    auto, auto,
+    // Dotted grid:
+    2.5rem 2.5rem,
+    2.5rem 2.5rem;
+
+  background-position:
+  // Radial gradients:
+    0 0, 0 0,
+    // Dotted grid:
+    0 0,
+    1.25rem 1.25rem;
+
+  background-repeat:
+  // Radial gradients:
+    no-repeat, no-repeat,
+    // Dotted grid:
+    repeat,
+    repeat;
 }
 *,
 *::before,
@@ -76,28 +107,39 @@ body {
 h1 {
   margin: 1rem 0 1rem 0;
   font-family: var(--mat-sys-display-large-font);
+  letter-spacing: var(--mat-sys-display-large-tracking);
 }
 h2 {
   font-family: var(--mat-sys-display-medium-font);
+  letter-spacing: var(--mat-sys-display-medium-tracking);
 }
 h3 {
   font-family: var(--mat-sys-display-small-font);
+  letter-spacing: var(--mat-sys-display-small-tracking);
 }
 h4 {
   font-family: var(--mat-sys-headline-large-font);
+  letter-spacing: var(--mat-sys-headline-large-tracking);
 }
 h5 {
   font-family: var(--mat-sys-headline-medium-font);
+  letter-spacing: var(--mat-sys-headline-medium-tracking);
 }
 h6 {
   font-family: var(--mat-sys-headline-small-font);
+  letter-spacing: var(--mat-sys-headline-small-tracking);
 }
 
 .card {
-  background: var(--mat-sys-surface);
+  background: var(--mat-sys-surface-container-highest);
   border-radius: var(--mat-sys-corner-medium);
-  border: 0.075rem solid var(--mat-sys-outline);
-  box-shadow: var(--mat-sys-level3);
+  border: 1px solid var(--mat-sys-outline-variant);
+  @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    background: color-mix(in srgb, var(--mat-sys-surface-container-highest) 20%, transparent);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+  box-shadow: var(--mat-sys-level1);
   overflow: hidden;
   height: 100%;
 
