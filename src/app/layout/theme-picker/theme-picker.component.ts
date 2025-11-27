@@ -20,7 +20,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   styleUrl: './theme-picker.component.scss',
 })
 export class ThemePickerComponent implements OnInit {
-  mode = signal('light');
+  mode = signal('dark');
   static storageKey = 'docs-theme-storage-current-name';
 
   constructor(private renderer: Renderer2) {
