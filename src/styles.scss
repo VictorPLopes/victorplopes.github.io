@@ -45,50 +45,53 @@ body {
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
   letter-spacing: var(--mat-sys-body-medium-tracking);
 
-  // Dotted grid:
+  background-attachment: fixed;
+  background-color: var(--mat-sys-surface);
   background-image:
-    // Radial gradients:
+  // Radial gradients:
     radial-gradient(
-      100% 50% at 50% 0%,
-      color-mix(in srgb, var(--mat-sys-primary) 20%, transparent) 0%,
-      color-mix(in srgb, var(--mat-sys-primary) 0%, transparent) 50%,
-      color-mix(in srgb, var(--mat-sys-primary) 0%, transparent) 100%
+      60% 80% at 50% 0%,
+      color-mix(in srgb, var(--mat-sys-primary) 30%, transparent) 0%,
+      transparent
     ),
     radial-gradient(
-      100% 50% at 50% 100%,
-      color-mix(in srgb, var(--mat-sys-primary) 15%, transparent) 0%,
-      color-mix(in srgb, var(--mat-sys-primary) 0%, transparent) 50%,
-      color-mix(in srgb, var(--mat-sys-primary) 0%, transparent) 100%
+      40% 60% at 50% 100%,
+      color-mix(in srgb, var(--mat-sys-tertiary) 20%, transparent) 0%,
+      transparent
     ),
+    radial-gradient(
+      30% 70% at 50% 50%,
+      color-mix(in srgb, var(--mat-sys-secondary) 10%, transparent) 0%,
+      transparent
+    ),
+    // Dotted grid:
     radial-gradient(circle at center, var(--mat-sys-outline-variant) 0.075rem, transparent 0),
     radial-gradient(circle at center, var(--mat-sys-outline-variant) 0.075rem, transparent 0);
-
   background-size:
-  // Radial gradients:
-    auto, auto,
+    // Radial gradients:
+    auto, auto, auto,
     // Dotted grid:
     2.5rem 2.5rem,
     2.5rem 2.5rem;
-
   background-position:
-  // Radial gradients:
-    0 0, 0 0,
+    // Radial gradients:
+    0 0, 0 0, 0 0,
     // Dotted grid:
     0 0,
     1.25rem 1.25rem;
-
   background-repeat:
-  // Radial gradients:
-    no-repeat, no-repeat,
+    // Radial gradients:
+    no-repeat, no-repeat, no-repeat,
     // Dotted grid:
     repeat,
     repeat;
+  background-blend-mode: hard-light, hard-light, screen, normal, normal;
 }
+
 *,
 *::before,
 *::after {
@@ -133,7 +136,7 @@ h6 {
 .card {
   background: var(--mat-sys-surface-container-highest);
   border-radius: var(--mat-sys-corner-medium);
-  border: 1px solid var(--mat-sys-outline-variant);
+  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 80%, transparent);
   @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
     background: color-mix(in srgb, var(--mat-sys-surface-container-highest) 20%, transparent);
     -webkit-backdrop-filter: blur(16px);
@@ -152,11 +155,60 @@ h6 {
   }
 }
 
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    background: color-mix(in srgb, var(--mat-sys-surface-variant) 20%, transparent) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    backdrop-filter: blur(16px) !important;
+  }
+  box-shadow: var(--mat-sys-level1) !important;
+}
+
+.mdc-text-field--filled {
+  border-radius: var(--mat-sys-corner-medium) !important;
+  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 80%, transparent) !important;
+}
+
+.text-card,
+.media-card {
+  background: var(--mat-sys-surface) !important;
+  border-radius: var(--mat-sys-corner-medium) !important;
+  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 80%, transparent) !important;
+  @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    background: color-mix(in srgb, var(--mat-sys-surface) 20%, transparent) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    backdrop-filter: blur(16px) !important;
+  }
+  box-shadow: var(--mat-sys-level1) !important;
+}
+
 // MOBILE OVERRIDES
 @media (max-width: 768px) {
   .card {
     height: auto !important;
     min-height: 0;
     overflow: overlay !important;
+  }
+  body {
+    background-image:
+  // Radial gradients:
+      radial-gradient(
+        80% 80% at 50% 0%,
+        color-mix(in srgb, var(--mat-sys-primary) 30%, transparent) 0%,
+        transparent
+      ),
+      radial-gradient(
+        60% 60% at 50% 100%,
+        color-mix(in srgb, var(--mat-sys-tertiary) 20%, transparent) 0%,
+        transparent
+      ),
+      radial-gradient(
+        50% 70% at 50% 50%,
+        color-mix(in srgb, var(--mat-sys-secondary) 10%, transparent) 0%,
+        transparent
+      ),
+      // Dotted grid:
+      radial-gradient(circle at center, var(--mat-sys-outline-variant) 0.075rem, transparent 0),
+      radial-gradient(circle at center, var(--mat-sys-outline-variant) 0.075rem, transparent 0);
   }
 }
