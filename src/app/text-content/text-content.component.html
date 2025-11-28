@@ -20,14 +20,14 @@
       <mat-card-header>
         <mat-card-title-group>
           <mat-card-title
-            ><b>{{ title() }}</b></mat-card-title
+            ><b [innerHTML]="title()"></b></mat-card-title
           >
           @if (subtitle()) {
-          <mat-card-subtitle>{{ subtitle() }}</mat-card-subtitle>
+          <mat-card-subtitle [innerHTML]="subtitle()"></mat-card-subtitle>
           }
         </mat-card-title-group>
       </mat-card-header>
-      <mat-card-content>{{ description() }}</mat-card-content>
+      <mat-card-content [innerHTML]="description()"></mat-card-content>
       @if (tagsList() || url()) {
       <mat-card-footer>
         <div class="footer">

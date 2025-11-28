@@ -1,16 +1,16 @@
 {
   "projects": [
     {
-      "title": "Easy V̇O₂ Max (app)",
-      "subtitle": "Low-cost solution for measuring V̇O₂ consumption directly",
-      "description": "Modern Desktop app that connects to a custom-made mask through Wi-Fi and the WebSocket protocol and calculates V̇O₂ consumption during exercise directly using the Bernoulli Equation and the Haldane Effect. There's minimal set-up, the system is easy to use, intuitive and flexible, supporting multiple profiles, data export and import and more.",
-      "tags": ["V̇O₂", "C#", "Avalonia", ".NET", "Wi-Fi", "WebSocket"]
+      "title": "Easy VO<sub>2</sub> Max (app)",
+      "subtitle": "Low-cost solution for measuring VO<sub>2</sub> consumption directly",
+      "description": "Modern Desktop app that connects to a custom-made mask through Wi-Fi and the WebSocket protocol and calculates VO<sub>2</sub> consumption during exercise directly using the Bernoulli Equation and the Haldane Effect. There's minimal set-up, the system is easy to use, intuitive and flexible, supporting multiple profiles, data export and import and more.",
+      "tags": ["VO2", "C#", "Avalonia", ".NET", "Wi-Fi", "WebSocket"]
     },
     {
-      "title": "Easy V̇O₂ Max (ESP8266 device)",
-      "subtitle": "Low-cost solution for measuring V̇O₂ consumption directly",
-      "description": "ESP8266-powered wireless mask that collects O₂ and breath data and sends it to a remote desktop app for processing.",
-      "tags": ["V̇O₂", "C++", "ESP8266", "Arduino", "Wi-Fi", "WebSocket"]
+      "title": "Easy VO<sub>2</sub> Max (ESP8266 device)",
+      "subtitle": "Low-cost solution for measuring VO<sub>2</sub> consumption directly",
+      "description": "ESP8266-powered wireless mask that collects O<sub>2</sub> and breath data and sends it to a remote desktop app for processing.",
+      "tags": ["VO2", "C++", "ESP8266", "Arduino", "Wi-Fi", "WebSocket"]
     },
     {
       "title": "Portfolio",
