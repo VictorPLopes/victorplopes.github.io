@@ -1,16 +1,16 @@
 {
   "projects": [
     {
-      "title": "Easy V̇O₂ Max (aplicativo)",
-      "subtitle": "Solução de baixo custo para medir diretamente o consumo de V̇O₂",
-      "description": "Aplicativo moderno para desktop que se conecta a uma máscara customizada via Wi-Fi e protocolo WebSocket e calcula o consumo de V̇O₂ durante o exercício diretamente usando a Equação de Bernoulli e o Efeito Haldane. Há configuração mínima, o sistema é fácil de usar, intuitivo e flexível, suportando múltiplos perfis, exportação e importação de dados e mais.",
-      "tags": ["V̇O₂", "C#", "Avalonia", ".NET", "Wi-Fi", "WebSocket"]
+      "title": "Easy VO<sub>2</sub> Max (aplicativo)",
+      "subtitle": "Solução de baixo custo para medir diretamente o consumo de VO<sub>2</sub>",
+      "description": "Aplicativo moderno para desktop que se conecta a uma máscara customizada via Wi-Fi e protocolo WebSocket e calcula o consumo de VO<sub>2</sub> durante o exercício diretamente usando a Equação de Bernoulli e o Efeito Haldane. Há configuração mínima, o sistema é fácil de usar, intuitivo e flexível, suportando múltiplos perfis, exportação e importação de dados e mais.",
+      "tags": ["VO2", "C#", "Avalonia", ".NET", "Wi-Fi", "WebSocket"]
     },
     {
-      "title": "Easy V̇O₂ Max (dispositivo ESP8266)",
-      "subtitle": "Solução de baixo custo para medir diretamente o consumo de V̇O₂",
-      "description": "Máscara sem fio com ESP8266 que coleta dados de O₂ e de respiração e os envia para um aplicativo de desktop remoto para processamento.",
-      "tags": ["V̇O₂", "C++", "ESP8266", "Arduino", "Wi-Fi", "WebSocket"]
+      "title": "Easy VO<sub>2</sub> Max (dispositivo ESP8266)",
+      "subtitle": "Solução de baixo custo para medir diretamente o consumo de VO<sub>2</sub>",
+      "description": "Máscara sem fio com ESP8266 que coleta dados de O<sub>2</sub> e de respiração e os envia para um aplicativo de desktop remoto para processamento.",
+      "tags": ["VO2", "C++", "ESP8266", "Arduino", "Wi-Fi", "WebSocket"]
     },
     {
       "title": "Portfólio",
