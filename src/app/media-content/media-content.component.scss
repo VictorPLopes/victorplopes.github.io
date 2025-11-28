@@ -95,6 +95,16 @@ mat-card.media-card {
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
+        mat-card-footer {
+          .footer {
+            .mat-mdc-chip-set .mdc-evolution-chip {
+              margin-top: 1rem;
+            }
+            .mat-mdc-card-actions {
+              margin-top: 1rem;
+            }
+          }
+        }
       }
     }
   }

@@ -1,13 +1,19 @@
 <mat-card appearance="outlined" class="text-card" [class.no-image]="!imageUrl()">
   <a
-    [href]="url() ?? '#'"
+    [href]="url() ?? 'javascript:void(0);'"
     class="content"
     [class.no-image]="!imageUrl()"
     [target]="url() ? '_blank' : ''"
   >
     @if (imageUrl()) {
     <div class="cover">
-      <img mat-card-image [ngSrc]="imageUrl()!" width="200" height="200" alt="{{ 'cover-image' | transloco }}" />
+      <img
+        mat-card-image
+        [ngSrc]="imageUrl()!"
+        width="200"
+        height="200"
+        alt="{{ 'cover-image' | transloco }}"
+      />
     </div>
     }
     <div class="info" [class.no-image]="!imageUrl()">

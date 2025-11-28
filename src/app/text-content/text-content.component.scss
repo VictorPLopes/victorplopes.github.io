@@ -106,6 +106,16 @@ mat-card.text-card {
           -webkit-box-orient: vertical;
           text-overflow: ellipsis;
         }
+        mat-card-footer {
+          .footer {
+            .mat-mdc-chip-set .mdc-evolution-chip {
+              margin-top: 1rem;
+            }
+            .mat-mdc-card-actions {
+              margin-top: 1rem;
+            }
+          }
+        }
       }
     }
   }
