@@ -1,77 +1,71 @@
 {
   "projects": [
     {
-      "title": "WeatherNow",
-      "subtitle": "Real-time meteorological dashboard",
-      "imageUrl": "https://picsum.photos/201/200",
-      "description": "A sleek web app providing current weather data, forecasts, and radar visualizations using the OpenWeather API.",
-      "url": "https://weathernow.example.com",
-      "tags": ["Angular", "TypeScript", "API"]
+      "title": "Easy V̇O₂ Max (app)",
+      "subtitle": "Low-cost solution for measuring V̇O₂ consumption directly",
+      "description": "Modern Desktop app that connects to a custom-made mask through Wi-Fi and the WebSocket protocol and calculates V̇O₂ consumption during exercise directly using the Bernoulli Equation and the Haldane Effect. There's minimal set-up, the system is easy to use, intuitive and flexible, supporting multiple profiles, data export and import and more.",
+      "tags": ["V̇O₂", "C#", "Avalonia", ".NET", "Wi-Fi", "WebSocket"]
     },
     {
-      "title": "TaskPilot",
-      "subtitle": "Minimalist productivity tracker",
-      "imageUrl": "https://picsum.photos/198/200",
-      "description": "Track daily habits and to-do items with a clean, responsive UI. Offline support and data sync included. Mauris sollicitudin neque augue. Nulla et massa neque. Duis hendrerit gravida elementum. Morbi pellentesque orci nisl, ut convallis purus pretium eu. Fusce leo nunc, lobortis maximus felis eget, dapibus laoreet erat. Sed semper risus sit amet ligula faucibus, eget maximus lorem scelerisque. Maecenas mollis vulputate dictum. Morbi et mauris vitae mauris pellentesque dapibus. Proin facilisis magna velit, pulvinar cursus ex ullamcorper eget. Donec neque libero, aliquam vitae erat sit amet, cursus elementum nunc. Morbi eleifend, mi et interdum pulvinar, arcu purus convallis purus, non mollis nulla nulla sit amet neque. Quisque at fermentum ante. Donec at aliquam neque, in sollicitudin nisl. Nulla tellus dolor, dignissim quis nisl eu, fermentum aliquet nunc. Praesent facilisis odio quis arcu accumsan, ac commodo turpis interdum.",
-      "url": "https://taskpilot.example.com",
-      "tags": ["PWA", "Material Design", "Firebase"]
+      "title": "Easy V̇O₂ Max (ESP8266 device)",
+      "subtitle": "Low-cost solution for measuring V̇O₂ consumption directly",
+      "description": "ESP8266-powered wireless mask that collects O₂ and breath data and sends it to a remote desktop app for processing.",
+      "tags": ["V̇O₂", "C++", "ESP8266", "Arduino", "Wi-Fi", "WebSocket"]
     },
     {
-      "title": "CodeCanvas",
-      "imageUrl": "https://picsum.photos/205/199",
-      "url": "https://codecanvas.dev",
-      "tags": ["Collaboration", "WebRTC", "Design"]
+      "title": "Portfolio",
+      "subtitle": "(This website)",
+      "description": "Portfolio website made in Angular. You're looking at it.",
+      "tags": ["Angular", "TypeScript", "Web"]
     },
     {
-      "title": "FitTrack",
-      "subtitle": "Personal fitness companion",
-      "description": "Log workouts, monitor progress, and visualize stats with dynamic charts and personalized goals.",
-      "url": "https://fittrack.example.com",
-      "tags": ["Health", "Charts", "Mobile"]
+      "title": "IT Inventory System",
+      "description": "Fully functional Open Source Web app to manage the inventory, clients, work orders, employees/users and products of a fictional IT/tech support company. The front-end of the application was made in React, while its back-end was with .NET + SQL Server using Entity Framework. Supports authentication and different levels of access.",
+      "url": "https://github.com/repos/VictorPLopes/ITInventorySystem",
+      "tags": ["Web", "React", "TypeScript", ".NET", "C#"]
     },
     {
-      "title": "PixelForge",
-      "subtitle": "Image editor in the browser",
-      "imageUrl": "https://picsum.photos/203/203",
-      "description": "Crop, filter, and adjust images directly in your browser. Powered by WebAssembly and canvas rendering.",
-      "url": "https://pixelforge.io",
-      "tags": ["WebAssembly", "Canvas", "UX"]
+      "title": "StayOnOriginPlus",
+      "subtitle": "Obsolete | Archived",
+      "description": "Automatically gets the right version of Origin, disables the forced \"upgrade\" to the EA App and allows the R&D mode to be enabled.",
+      "url": "https://github.com/VictorPLopes/StayOnOriginPlus",
+      "tags": ["Origin", "EA", "Gaming"]
     },
     {
-      "title": "NoteSphere",
-      "subtitle": "Where ideas orbit freely",
-      "imageUrl": "https://picsum.photos/197/202",
-      "description": "Markdown-based note-taking platform that supports graph visualization of linked thoughts.",
-      "tags": ["Markdown", "Visualization"]
+      "title": "UniversalTranslator",
+      "description": "Modular platform that allows code in any language to be analyzed and translated to any other language",
+      "url": "https://github.com/VictorPLopes/TradutorUniversal",
+      "tags": ["Python", "Translation", "Transition dictionary"]
     },
     {
-      "title": "RecipeBook",
-      "subtitle": "Your smart kitchen assistant",
-      "imageUrl": "https://picsum.photos/199/204",
-      "description": "Discover and manage your favorite recipes. Auto-generate shopping lists and filter by ingredients.",
-      "url": "https://recipes.example.com",
-      "tags": ["Food", "Angular", "AI"]
+      "title": "FixGraphicEQ",
+      "description": "CLI tool that offsets a GraphicEq curve generated by AutoEQ.app to compensate for the difference in HeSuVi",
+      "url": "https://github.com/repos/VictorPLopes/FixGraphicEQ",
+      "tags": [".NET", "C#", "AutoEq", "Desktop", "Audio"]
     },
     {
-      "title": "StreamHub",
-      "subtitle": "Media streaming aggregator",
-      "description": "Aggregates your favorite content from multiple streaming services into one unified dashboard. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut magna vitae risus tempor tincidunt. Duis leo tortor, venenatis a eros eu, pretium molestie turpis. Proin molestie augue ut purus elementum eleifend vel dignissim lacus. Donec blandit mauris in tortor luctus sodales. Suspendisse ut convallis turpis, ac consectetur urna. In nisi ipsum, facilisis vel metus sit amet, vehicula feugiat odio. Praesent pulvinar nunc enim, non efficitur mi suscipit eu. Aliquam erat volutpat. Sed sed nibh libero. Donec at neque varius, egestas nulla eget, scelerisque mauris. Curabitur pellentesque tempus enim eu tempus. Mauris sollicitudin neque augue. Nulla et massa neque. Duis hendrerit gravida elementum. Morbi pellentesque orci nisl, ut convallis purus pretium eu. Fusce leo nunc, lobortis maximus felis eget, dapibus laoreet erat. Sed semper risus sit amet ligula faucibus, eget maximus lorem scelerisque. Maecenas mollis vulputate dictum. Morbi et mauris vitae mauris pellentesque dapibus. Proin facilisis magna velit, pulvinar cursus ex ullamcorper eget. Donec neque libero, aliquam vitae erat sit amet, cursus elementum nunc. Morbi eleifend, mi et interdum pulvinar, arcu purus convallis purus, non mollis nulla nulla sit amet neque. Quisque at fermentum ante. Donec at aliquam neque, in sollicitudin nisl. Nulla tellus dolor, dignissim quis nisl eu, fermentum aliquet nunc. Praesent facilisis odio quis arcu accumsan, ac commodo turpis interdum."
+      "title": "OneDark Pro Chromium Theme",
+      "description": "A port of Binaryify's One Dark Pro theme for Visual Studio Code for Chromium-based browsers (Chromium, Chrome, Edge, Brave etc.)",
+      "url": "https://github.com/repos/VictorPLopes/OneDark-Pro-Chromium",
+      "tags": ["Theme", "OneDark", "Chromium"]
     },
     {
-      "title": "DataViz Pro",
-      "subtitle": "Professional data visualization suite",
-      "imageUrl": "https://picsum.photos/204/198",
-      "description": "Generate beautiful, interactive charts and dashboards using your datasets with zero setup.",
-      "url": "https://datavizpro.app",
-      "tags": ["Data", "Visualization", "Charts", "Angular"]
+      "title": "OneDark Pro Kitty Terminal Theme",
+      "description": "Kitty theme inspired by Binaryify's One Dark Pro theme for Visual Studio Code.",
+      "url": "https://github.com/VictorPLopes/OneDark-Pro-Kitty-Terminal",
+      "tags": ["Theme", "OneDark", "Kitty"]
     },
     {
-      "title": "TravelMate",
-      "subtitle": "Your pocket itinerary planner",
-      "imageUrl": "https://picsum.photos/206/205",
-      "description": "Plan trips collaboratively, manage bookings, and discover hidden gems around your destinations.",
-      "url": "https://travelmate.app",
-      "tags": ["Travel", "Collaboration"]
+      "title": "OneDark Pro Starship Prompt Theme",
+      "description": "A Starship Prompt preset inspired by Atom's One Dark color scheme and Binaryify's One Dark Pro theme for Visual Studio Code.",
+      "url": "https://github.com/VictorPLopes/OneDark-Pro-Starhip",
+      "tags": ["Theme", "OneDark", "Starship"]
+    },
+    {
+      "title": "OneDark Pro Windows Terminal Theme",
+      "description": "Windows Terminal theme inspired by Binaryify's One Dark Pro theme for Visual Studio Code.",
+      "url": "https://github.com/VictorPLopes/OneDark-Pro-Windows-Terminal",
+      "tags": ["Theme", "OneDark", "Windows Terminal"]
     }
   ]
 }
