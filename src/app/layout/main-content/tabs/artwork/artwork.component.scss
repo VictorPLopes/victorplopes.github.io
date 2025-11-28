@@ -3,16 +3,15 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  row-gap: 1rem;
+  column-gap: 1rem;
 }
 
 // MOBILE OVERRIDES
 @media (max-width: 768px) {
-  .art-projects {
-    display: flex;
+  :host {
     flex-direction: column;
     flex-wrap: nowrap;
-    gap: 0.5rem;
     width: 100%;
   }
 }

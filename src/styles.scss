@@ -134,15 +134,29 @@ h6 {
 }
 
 .card {
-  background: var(--mat-sys-surface-container-highest);
-  border-radius: var(--mat-sys-corner-medium);
-  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent);
+  // Fallback values for when glassmorphism isn't supported
+  background: var(--mat-sys-surface-container-highest) !important;
+  border: 1px solid var(--mat-sys-outline-variant) !important;
+
+  // Glassmorphism overrides
   @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
-    background: color-mix(in srgb, var(--mat-sys-surface-container-highest) 20%, transparent);
-    -webkit-backdrop-filter: blur(16px);
-    backdrop-filter: blur(16px);
+    // Blurry Glass
+    background: color-mix(in srgb, var(--mat-sys-surface-container-highest) 20%, transparent) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    backdrop-filter: blur(16px) !important;
+    border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent) !important;
+
+    // Grain (Frosted Glass)
+    position: relative !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='0.10'/%3E%3C/svg%3E") !important;
+    background-repeat: repeat !important;
+    background-size: 182px !important;
+    background-position: 0 0 !important;
+    background-blend-mode: overlay !important;
   }
-  box-shadow: var(--mat-sys-level1);
+
+  border-radius: var(--mat-sys-corner-medium) !important;;
+  box-shadow: var(--mat-sys-level1) !important;;
   overflow: hidden;
   height: 100%;
 
@@ -155,62 +169,105 @@ h6 {
   }
 }
 
+.mat-mdc-form-field .mdc-text-field .mdc-line-ripple::before {
+  border-bottom-color: transparent !important;
+}
+
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  // Glassmorphism overrides
   @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    // Blurry Glass
     background: color-mix(in srgb, var(--mat-sys-surface-variant) 20%, transparent) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     backdrop-filter: blur(16px) !important;
+
+    // Grain (Frosted Glass)
+    position: relative !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='0.10'/%3E%3C/svg%3E") !important;
+    background-repeat: repeat !important;
+    background-size: 182px !important;
+    background-position: 0 0 !important;
+    background-blend-mode: overlay !important;
   }
-  box-shadow: var(--mat-sys-level1) !important;
 }
 
 .mdc-text-field--filled {
+  // Glassmorphism overrides
+  @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent) !important;
+  }
+
   border-radius: var(--mat-sys-corner-medium) !important;
-  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent) !important;
+  box-shadow: var(--mat-sys-level1) !important;
 }
 
 .text-card,
 .media-card {
+  // Fallback values for when glassmorphism isn't supported
   background: var(--mat-sys-surface) !important;
-  border-radius: var(--mat-sys-corner-medium) !important;
-  border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent) !important;
+  border: 1px solid var(--mat-sys-outline-variant) !important;
+
+  // Glassmorphism overrides
   @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    // Blurry Glass
     background: color-mix(in srgb, var(--mat-sys-surface) 20%, transparent) !important;
     -webkit-backdrop-filter: blur(16px) !important;
     backdrop-filter: blur(16px) !important;
+    border: 1px solid color-mix(in srgb, var(--mat-sys-outline-variant) 70%, transparent) !important;
+
+    // Grain (Frosted Glass)
+    position: relative !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='0.10'/%3E%3C/svg%3E") !important;
+    background-repeat: repeat !important;
+    background-size: 182px !important;
+    background-position: 0 0 !important;
+    background-blend-mode: overlay !important;
   }
-  box-shadow: var(--mat-sys-level1) !important;
+
+  border-radius: var(--mat-sys-corner-medium) !important;;
+  box-shadow: var(--mat-sys-level1) !important;;
 }
 
 .card::before,
 .mdc-text-field--filled:not(.mdc-text-field--disabled)::before,
 .text-card::before,
 .media-card::before {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 1px !important;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent) !important;
+  // Glassmorphism overrides
+  @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    ) !important;
+  }
 }
 
 .card::after,
 .mdc-text-field--filled:not(.mdc-text-field--disabled)::after,
 .text-card::after,
 .media-card::after {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 1px !important;
-  height: 100% !important;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.8),
-    transparent,
-    rgba(255, 255, 255, 0.3)
-  ) !important;
+  // Glassmorphism overrides
+  @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 1px !important;
+    height: 100% !important;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.8),
+      transparent,
+      rgba(255, 255, 255, 0.3)
+    ) !important;
+  }
 }
 
 // MOBILE OVERRIDES

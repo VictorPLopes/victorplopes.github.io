@@ -1,6 +1,8 @@
 :host {
   display: block;
   height: 100vh;
+  max-width: calc(1440px + 2rem);
+  justify-self: center;
   overflow: hidden;
   margin: 0;
   padding: 0;
@@ -11,8 +13,8 @@
   grid-template-columns: 2fr 10fr; // Desktop
   height: 100%;
   min-height: 0;
-  gap: 1.25rem;
-  padding: 1.25rem;
+  gap: 1rem;
+  padding: 1rem;
 
   .sidebar-cell,
   .main-cell {
@@ -74,7 +76,7 @@
     grid-template-rows: auto 1fr;
     padding: 1rem;
     height: auto;
-    gap: 1.25rem;
+    gap: 1rem;
 
     .sidebar-cell,
     .main-cell {
