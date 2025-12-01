@@ -20,7 +20,7 @@
           }
         </mat-card-title-group>
       </mat-card-header>
-      <mat-card-content>{{ description() }}</mat-card-content>
+      <mat-card-content pfAutoLineClamp>{{ description() }}</mat-card-content>
       @if (tagsList() || url()) {
       <mat-card-footer>
         <div class="footer">

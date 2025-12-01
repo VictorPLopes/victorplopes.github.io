@@ -10,6 +10,10 @@
   padding: 1rem 0 1rem 0;
   -webkit-overflow-scrolling: touch;
   text-align: justify;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--tab-scroll-padding-top, 1rem);
 }
 
 // MOBILE OVERRIDES
@@ -19,5 +23,6 @@
     min-height: 0;
     display: block;
     overflow: overlay !important;
+    padding: 1rem 0 0 0;
   }
 }
