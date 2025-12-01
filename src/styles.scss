@@ -114,6 +114,7 @@ $grain-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
 }
 
 body {
+  cursor: default;
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
   letter-spacing: var(--mat-sys-body-medium-tracking);
