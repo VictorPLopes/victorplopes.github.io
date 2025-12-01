@@ -29,6 +29,7 @@ mat-card.media-card {
         object-fit: cover;
         display: block;
       }
+      background: var(--mat-sys-inverse-surface);
     }
     .info {
       flex: 0 0 calc(var(--info-ratio) * 100%);
