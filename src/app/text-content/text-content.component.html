@@ -19,9 +19,7 @@
     <div class="info" [class.no-image]="!imageUrl()">
       <mat-card-header>
         <mat-card-title-group>
-          <mat-card-title
-            ><b [innerHTML]="title()"></b></mat-card-title
-          >
+          <mat-card-title><b [innerHTML]="title()"></b></mat-card-title>
           @if (subtitle()) {
           <mat-card-subtitle [innerHTML]="subtitle()"></mat-card-subtitle>
           }
@@ -30,7 +28,7 @@
       <mat-card-content [innerHTML]="description()"></mat-card-content>
       @if (tagsList() || url()) {
       <mat-card-footer>
-        <div class="footer">
+        <div class="footer" [class.no-image]="!imageUrl()">
           @if (tagsList()) {
           <mat-chip-set>
             @for (tag of tagsList(); track $index) {

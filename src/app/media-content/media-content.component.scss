@@ -98,6 +98,9 @@ mat-card.media-card {
 
 // MOBILE OVERRIDES
 @media (max-width: 768px) {
+  :host {
+    --max-lines: 10;
+  }
   mat-card.media-card {
     width: 100%;
     height: auto;
@@ -113,15 +116,6 @@ mat-card.media-card {
 
       .info {
         height: auto;
-        mat-card-content {
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 10;
-          line-clamp: 10;
-          line-height: var(--mat-sys-body-medium-line-height);
-          max-height: calc(var(--mat-sys-body-medium-line-height) * 10);
-          overflow: hidden;
-        }
         mat-card-footer {
           .footer {
             .mat-mdc-chip-set .mdc-evolution-chip {
