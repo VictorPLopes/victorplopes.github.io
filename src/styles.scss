@@ -23,6 +23,11 @@
 
   --radial3-w: 30%;
   --radial3-h: 70%;
+
+  // Global Glassmorphism settings
+  --glass-blur-radius: 16px;
+  --glass-refraction: 0.2;
+  --glass-depth: 10;
 }
 
 html {
@@ -51,34 +56,53 @@ html {
 $grain-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)' opacity='0.10'/%3E%3C/svg%3E";
 
 // Frosted Glass / Glassmorphism surface (main)
-@mixin frosted-glass($base-color, $outline-color) {
+@mixin frosted-glass(
+  $base-color,
+  $outline-color,
+  $blur-radius: 16px,
+  $refraction: 0.15,
+  $depth: 10
+) {
   // Fallback values for when glassmorphism isn't supported
   background: $base-color !important;
   border: 1px solid $outline-color !important;
-
-  // Glassmorphism overrides
-  @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
-    // Blurry Glass
-    background: color-mix(in srgb, $base-color 20%, transparent) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
-    backdrop-filter: blur(16px) !important;
-    border: 1px solid color-mix(in srgb, $outline-color 70%, transparent) !important;
-
-    // Grain (Frosted Glass)
-    position: relative !important;
-    background-image: url($grain-svg) !important;
-    background-repeat: repeat !important;
-    background-size: 182px !important;
-    background-position: 0 0 !important;
-    background-blend-mode: overlay !important;
-  }
+  box-shadow: var(--mat-sys-level1);
 
   border-radius: var(--mat-sys-corner-medium) !important;
-  box-shadow: var(--mat-sys-level1) !important;
+
+  // Glassmorphism overrides
+  @supports (backdrop-filter: blur($blur-radius)) or (-webkit-backdrop-filter: blur($blur-radius)) {
+    // Blurry Glass
+    background: color-mix(in srgb, $base-color calc($refraction * 100%), transparent) !important;
+    -webkit-backdrop-filter: blur($blur-radius) !important;
+    backdrop-filter: blur($blur-radius) !important;
+    border: 1px solid color-mix(in srgb, $outline-color calc(3.5 * $refraction * 100%), transparent) !important;
+    box-shadow: var(--mat-sys-level1),
+      rgba(255, 255, 255, calc(0.7 * $refraction)) 0px 1px 0px inset,
+      rgba(255, 255, 255, calc(0.7 * $refraction / 2)) 0px -1px 0px inset,
+      rgba(255, 255, 255, 0.15) 0px 0px 2px 0px inset,
+      rgba(255, 255, 255, 0.08) 0px 2px 4px 0px inset,
+      rgba(255, 255, 255, 0.12) 0px -2px 2px 0px inset !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+
+    // Grain and Depth (Frosted Glass)
+    background-image: url($grain-svg),
+      radial-gradient(
+        circle at 30% 20%,
+        rgba(255, 255, 255, calc(0.015 * $depth)) 0%,
+        transparent 70%
+      ) !important;
+    background-repeat: repeat, no-repeat !important;
+    background-size: 182px, 100% !important;
+    background-position: 0 0, 0 0 !important;
+    background-blend-mode: overlay, overlay !important;
+  }
 }
 
 // Adds Glasmorphism reflection at the top
-@mixin glass-highlight-before() {
+@mixin glass-highlight-before($refraction: 0.15) {
   @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
     content: '' !important;
     position: absolute !important;
@@ -89,14 +113,14 @@ $grain-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, $refraction),
       transparent
     ) !important;
   }
 }
 
 // Adds Glasmorphism reflection on the left
-@mixin glass-highlight-after() {
+@mixin glass-highlight-after($refraction: 0.15) {
   @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
     content: '' !important;
     position: absolute !important;
@@ -106,9 +130,9 @@ $grain-svg: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBo
     height: 100% !important;
     background: linear-gradient(
       180deg,
-      rgba(255, 255, 255, 0.8),
-      transparent,
-      rgba(255, 255, 255, 0.3)
+      rgba(255, 255, 255, calc(0.7 * $refraction)),
+      rgba(255, 255, 255, calc(0.3 * $refraction)),
+      transparent
     ) !important;
   }
 }
@@ -206,7 +230,13 @@ h6 {
 }
 
 .card {
-  @include frosted-glass(var(--mat-sys-surface-container-highest), var(--mat-sys-outline-variant));
+  @include frosted-glass(
+    var(--mat-sys-surface-container-highest),
+    var(--mat-sys-outline-variant),
+    var(--glass-blur-radius),
+    var(--glass-refraction),
+    var(--glass-depth)
+  );
 
   overflow: hidden;
   height: 100%;
@@ -225,7 +255,13 @@ h6 {
 }
 
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-  @include frosted-glass(var(--mat-sys-surface-variant), var(--mat-sys-outline-variant));
+  @include frosted-glass(
+    var(--mat-sys-surface-variant),
+    var(--mat-sys-outline-variant),
+    var(--glass-blur-radius),
+    var(--glass-refraction),
+    var(--glass-depth)
+  );
 }
 
 .mdc-text-field--filled {
@@ -239,21 +275,27 @@ h6 {
 
 .text-card,
 .media-card {
-  @include frosted-glass(var(--mat-sys-surface), var(--mat-sys-outline-variant));
+  @include frosted-glass(
+    var(--mat-sys-surface),
+    var(--mat-sys-outline-variant),
+    var(--glass-blur-radius),
+    var(--glass-refraction),
+    var(--glass-depth)
+  );
 }
 
 .card::before,
 .mdc-text-field--filled:not(.mdc-text-field--disabled)::before,
 .text-card::before,
 .media-card::before {
-  @include glass-highlight-before();
+  @include glass-highlight-before(var(--glass-refraction));
 }
 
 .card::after,
 .mdc-text-field--filled:not(.mdc-text-field--disabled)::after,
 .text-card::after,
 .media-card::after {
-  @include glass-highlight-after();
+  @include glass-highlight-after(var(--glass-refraction));
 }
 
 // MOBILE OVERRIDES
