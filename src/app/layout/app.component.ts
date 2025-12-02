@@ -1,12 +1,21 @@
-import { ChangeDetectionStrategy, Component, OnDestroy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { ProfileSidebarComponent } from './profile-sidebar/profile-sidebar.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { Profile } from './profile-sidebar/models/profile';
-import { Subscription } from 'rxjs';
+import { filter, map, Observable, of, Subscription } from 'rxjs';
 import { OptionsComponent } from '../options/options.component';
 import { Title } from '@angular/platform-browser';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {
+  NavigationCancel,
+  NavigationEnd,
+  NavigationError,
+  NavigationStart,
+  Router,
+} from '@angular/router';
 
 @Component({
   selector: 'pf-root',
@@ -15,7 +24,9 @@ import { Title } from '@angular/platform-browser';
     MainContentComponent,
     TranslocoPipe,
     MatFormFieldModule,
+    AsyncPipe,
     OptionsComponent,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -24,12 +35,18 @@ import { Title } from '@angular/platform-browser';
     class: 'pf-root',
   },
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent implements OnInit, OnDestroy {
+  loading$: Observable<boolean> = of(false);
+
   myProfile!: Profile;
 
   private sub = new Subscription();
 
-  constructor(private title: Title, private translocoService: TranslocoService) {
+  constructor(
+    private title: Title,
+    private translocoService: TranslocoService,
+    private router: Router
+  ) {
     this.sub.add(
       this.translocoService.selectTranslation('profile').subscribe((profile: any) => {
         this.myProfile = profile;
@@ -40,6 +57,20 @@ export class AppComponent implements OnDestroy {
         this.title.setTitle(value);
       })
     );
+  }
+
+  ngOnInit() {
+    this.loading$ = this.router.events.pipe(
+      filter(
+        (e) =>
+          e instanceof NavigationStart ||
+          e instanceof NavigationEnd ||
+          e instanceof NavigationCancel ||
+          e instanceof NavigationError
+      ),
+      map((e) => e instanceof NavigationStart)
+    );
+    //this.loading$ = of(true);
   }
 
   ngOnDestroy(): void {
