@@ -70,7 +70,6 @@ export class AppComponent implements OnInit, OnDestroy {
       ),
       map((e) => e instanceof NavigationStart)
     );
-    //this.loading$ = of(true);
   }
 
   ngOnDestroy(): void {
