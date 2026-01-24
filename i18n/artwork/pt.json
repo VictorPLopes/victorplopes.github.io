@@ -1,74 +1,99 @@
 {
   "artwork": [
     {
-      "title": "Horizontes em Óleo",
-      "subtitle": "Pinturas de paisagem em grande escala",
-      "imageUrl": "https://picsum.photos/400/600?random=1",
-      "description": "Uma série de pinturas a óleo que explora luz e profundidade atmosférica em costas imaginadas. Impasto espesso e camadas de veladura criam presença tátil.",
-      "url": "https://example.com/oil-horizons",
-      "tags": ["Pintura", "Paisagem", "Óleo"]
+      "description": "Modelo fiel da TARDIS do Doutor, da série Doctor Who da BBC, com texturas em alta resolução. Download gratuito disponível.",
+      "imageUrl": "https://cdnb.artstation.com/p/assets/images/images/093/908/361/large/victor-lopes-tardis-poster-post.webp",
+      "tags": [
+        "Doctor Who",
+        "Modelo 3D",
+        "Blender"
+      ],
+      "title": "Fan-Art da TARDIS",
+      "url": "https://www.artstation.com/artwork/g8kVVG"
     },
     {
-      "title": "Ruas de Néon",
-      "subtitle": "Paisagens urbanas digitais ao anoitecer",
-      "imageUrl": "https://picsum.photos/402/601?random=2",
-      "description": "Cenas renderizadas das noites urbanas onde reflexos de néon e superfícies molhadas encontram composição pictórica. Combina texturas fotorrealistas com paletas estilizadas.",
-      "tags": ["Digital", "Cidade", "Ilustração"]
+      "description": "Renderização 3D do planeta Júpiter, atrás de sua lua Io.",
+      "imageUrl": "https://cdna.artstation.com/p/assets/images/images/076/023/076/large/victor-lopes-jupiter-poster-50.jpg",
+      "tags": [
+        "Espaço",
+        "Júpiter",
+        "Renderização",
+        "Blender"
+      ],
+      "title": "Júpiter e Io",
+      "url": "https://www.artstation.com/artwork/g0ygD8"
     },
     {
-      "title": "Escultura do Solstício",
-      "imageUrl": "https://picsum.photos/399/598?random=3",
-      "description": "Fotografias que documentam um conjunto de esculturas modulares organizadas para estudos de luz sazonal. Obras pensadas para serem vistas em sequência.",
-      "tags": ["Escultura", "Fotografia"]
+      "description": "Recriação totalmente em CG de uma foto da missão Apollo 8.",
+      "imageUrl": "https://cdnb.artstation.com/p/assets/images/images/058/174/699/large/victor-lopes-moon-render.jpg",
+      "tags": [
+        "Espaço",
+        "Lua",
+        "Renderização",
+        "Blender"
+      ],
+      "title": "A Lua",
+      "url": "https://www.artstation.com/artwork/Ea3ZO4"
     },
     {
-      "title": "Tinta & Papel",
-      "subtitle": "Desenhos e estudos tradicionais",
-      "imageUrl": "https://picsum.photos/401/600?random=4",
-      "description": "Coleção de estudos em carvão e tinta com foco em gesto, economia de traço e marca expressiva.",
-      "url": "https://example.com/ink-and-paper"
+      "description": "Produto para Blender disponível para download, que capacita artistas 3D com um material ABS PBR fácil de usar e altamente realista, especialmente projetado para peças semelhantes às LEGO®",
+      "imageUrl": "https://cdna.artstation.com/p/assets/images/images/058/141/822/large/victor-lopes-island.jpg",
+      "subtitle": "LEGO® fotorrealista para Blender",
+      "tags": [
+        "LEGO®",
+        "Blender",
+        "Download"
+      ],
+      "title": "BlendBricks",
+      "url": "https://superhivemarket.com/products/blendbricks"
     },
     {
-      "title": "Sonata Cromática",
-      "subtitle": "Ensaios visuais sobre música e cor",
-      "imageUrl": "https://picsum.photos/397/603?random=5",
-      "description": "Peças em técnica mista que traduzem estruturas musicais em relações de cor e ritmos composicionais.",
-      "tags": ["Mista", "Música", "Conceito"]
+      "description": "Recriação de um frame icônico do jogo clássico LEGO® Star Wars The Complete Saga, usando Blender.",
+      "imageUrl": "https://cdna.artstation.com/p/assets/images/images/058/144/624/large/victor-lopes-lego-norman-final-aces.jpg",
+      "subtitle": "Fan-Art do Soldado Rebelde de Bigode",
+      "tags": [
+        "LEGO®",
+        "Star Wars",
+        "Blender",
+        "Download"
+      ],
+      "title": "Batalha de Hoth",
+      "url": "https://www.artstation.com/artwork/KOngLB"
     },
     {
-      "title": "Sonhos Poligonais",
-      "subtitle": "Vignettes 3D low-poly",
-      "imageUrl": "https://picsum.photos/403/599?random=6",
-      "description": "Pequenas cenas 3D que enfatizam silhueta e geometria simplificada para evocar humor e narrativa.",
-      "url": "https://example.com/polygon-dreams",
-      "tags": ["3D", "Render", "Conceito"]
+      "description": "Material de neve 100% procedural para Blender Cycles. Disponível para download.",
+      "imageUrl": "https://cdna.artstation.com/p/assets/images/images/051/380/874/large/victor-lopes-final-render-post.jpg?1657142451",
+      "tags": [
+        "Neve",
+        "Blender",
+        "Download"
+      ],
+      "title": "BlendSnow",
+      "url": "https://superhivemarket.com/products/blendsnow"
     },
     {
-      "title": "Estudo de Movimento",
-      "imageUrl": "https://picsum.photos/400/602?random=7",
-      "description": "Loops de animação curtos que exploram peso, tempo e movimento secundário. Apresentado como trechos de vídeo e GIFs.",
-      "tags": ["Animação", "Estudo"]
+      "description": "Inspirado por The Batman (2022), decidi renderizar no Blender meu design favorito do Batman: o traje v7.43 de Batman Arkham Knight.",
+      "imageUrl": "https://cdnb.artstation.com/p/assets/images/images/069/167/483/large/victor-lopes-render.jpg",
+      "subtitle": "Fan-Art de Batman Arkham Knight",
+      "tags": [
+        "Batman",
+        "Fan-Art",
+        "Renderização"
+      ],
+      "title": "Batsuit v7.43",
+      "url": "https://www.artstation.com/artwork/8bnWYq"
     },
     {
-      "title": "Retratos do Silêncio",
-      "subtitle": "Retratos pintados íntimos",
-      "imageUrl": "https://picsum.photos/405/605?random=8",
-      "description": "Série de retratos em pequeno formato com paletas suaves, focando em expressões candidas e gestos silenciosos.",
-      "url": "https://example.com/portraits-of-silence",
-      "tags": ["Pintura", "Retrato"]
-    },
-    {
-      "title": "Arcádia Conceitual",
-      "subtitle": "Arte conceitual ambiental",
-      "imageUrl": "https://picsum.photos/398/600?random=9",
-      "description": "Pinturas conceituais e thumbnails para construção de mundo — flora, arquitetura e estudos atmosféricos para cenários imersivos."
-    },
-    {
-      "title": "Tapeçaria Aurora",
-      "subtitle": "Padrões têxteis e tramas digitais",
-      "imageUrl": "https://picsum.photos/404/598?random=10",
-      "description": "Explorações de padrão destinadas à produção têxtil: repetições, variantes de cor e mockups de textura para tecelagem.",
-      "tags": ["Têxteis", "Padrão", "Design"]
+      "description": "Pôster inspirado em Vardos de SWBFII (2017), usando um design de Stormtrooper de Deggial Nox.",
+      "imageUrl": "https://cdna.artstation.com/p/assets/images/images/064/535/664/large/victor-lopes-imperial-stormtrooper-propaganda-6-mb.jpg",
+      "subtitle": "Fan-Art de Star Wars",
+      "tags": [
+        "Star Wars",
+        "Fan-Art",
+        "Design Gráfico"
+      ],
+      "title": "Pôster de Propaganda Imperial",
+      "url": "https://www.artstation.com/artwork/X1QD1R"
     }
   ]
 }
