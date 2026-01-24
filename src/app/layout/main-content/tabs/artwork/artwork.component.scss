@@ -13,6 +13,13 @@
   justify-items: stretch;
 }
 
+// LARGE SCREENS OVERRIDES
+@media (min-height: 1500px) {
+  :host {
+    grid-auto-rows: 50%;
+  }
+}
+
 // MOBILE OVERRIDES
 @media (max-width: 768px) {
   :host {
