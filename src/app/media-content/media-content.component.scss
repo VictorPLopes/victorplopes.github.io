@@ -65,9 +65,9 @@ mat-card.media-card {
           flex-direction: row;
           justify-content: space-between;
           align-items: end;
+          margin-top: 1rem;
           .mat-mdc-chip-set .mdc-evolution-chip {
-            margin-bottom: 0;
-            margin-top: 0;
+            margin: 0;
           }
           .mat-mdc-card-actions {
             margin-top: 0;
@@ -82,6 +82,27 @@ mat-card.media-card {
         }
       }
     }
+  }
+}
+
+:host ::ng-deep {
+  .mdc-evolution-chip-set__chips {
+    gap: 0.25rem !important;
+    margin: 0 !important;
+  }
+  .mdc-evolution-chip__text-label {
+    font-family: var(--mat-chip-label-text-font, var(--mat-sys-label-small-font));
+    line-height: var(--mat-chip-label-text-line-height, var(--mat-sys-label-small-line-height));
+    font-size: var(--mat-chip-label-text-size, var(--mat-sys-label-small-size));
+    font-weight: var(--mat-chip-label-text-weight, var(--mat-sys-label-small-weight));
+    letter-spacing: var(--mat-chip-label-text-tracking, var(--mat-sys-label-small-tracking));
+  }
+  .mdc-evolution-chip__action--primary {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .mat-mdc-standard-chip {
+    height: fit-content;
   }
 }
 
@@ -117,7 +138,7 @@ mat-card.media-card {
 
       .info {
         height: auto;
-        mat-card-footer {
+        /* mat-card-footer {
           .footer {
             .mat-mdc-chip-set .mdc-evolution-chip {
               margin-top: 1rem;
@@ -126,7 +147,7 @@ mat-card.media-card {
               margin-top: 1rem;
             }
           }
-        }
+        } */
       }
     }
   }
