@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import { map, Observable } from 'rxjs';
-import { provideTranslocoScope, TranslocoService } from '@jsverse/transloco';
+import { TranslocoService } from '@jsverse/transloco';
 import { MediaContentComponent } from '../../../../media-content/media-content.component';
 import { MediaItem } from '../../../../media-content/models/media-item';
 

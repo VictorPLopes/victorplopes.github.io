@@ -1,5 +1,20 @@
-<h2 [innerHTML]="'contact.contact-header' | transloco"></h2>
-<p [innerHTML]="'contact.contact-info' | transloco"></p>
-<mat-divider></mat-divider>
-<h3 [innerHTML]="'contact.resume-header' | transloco"></h3>
-<p [innerHTML]="'contact.resume-info' | transloco"></p>
+<div class="contact">
+  <h2 [innerHTML]="'contact.contact-header' | transloco"></h2>
+  <p [innerHTML]="'contact.contact-info' | transloco"></p>
+</div>
+<mat-divider [vertical]="isDesktop"></mat-divider>
+<div class="resume">
+  <h2 [innerHTML]="'contact.resume-header' | transloco"></h2>
+  <a [href]="pdfSrc">
+    <pdf-viewer
+      [src]="pdfSrc"
+      [render-text]="false"
+      [original-size]="false"
+      [fit-to-page]="true"
+      [(page)]="page"
+      [show-all]="false"
+      [stick-to-page]="true"
+      [show-borders]="false"
+    ></pdf-viewer>
+  </a>
+</div>
