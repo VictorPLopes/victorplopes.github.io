@@ -1,4 +1,4 @@
-import { SocialItem } from "./social-item";
+import { SocialItem } from './social-item';
 
 export interface Profile {
   name: string;

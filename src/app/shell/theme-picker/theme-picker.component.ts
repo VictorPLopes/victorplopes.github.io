@@ -11,9 +11,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   template: `
     <button mat-icon-button (click)="changeMode()">
       @if (mode() == 'dark') {
-      <mat-icon> light_mode </mat-icon>
+        <mat-icon> light_mode </mat-icon>
       } @else {
-      <mat-icon> dark_mode </mat-icon>
+        <mat-icon> dark_mode </mat-icon>
       }
     </button>
   `,

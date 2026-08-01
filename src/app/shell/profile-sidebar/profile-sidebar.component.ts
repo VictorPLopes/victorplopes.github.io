@@ -35,7 +35,7 @@ export class ProfileSidebarComponent {
   readonly instagram = input<string>();
   readonly facebook = input<string>();
   readonly socialButtonStyle = input<'text' | 'filled' | 'elevated' | 'outlined' | 'tonal'>(
-    'filled'
+    'filled',
   );
   readonly customWebsites = input<SocialItem[]>([]);
 
@@ -118,7 +118,10 @@ export class ProfileSidebarComponent {
 
   private registered = new Set<string>();
 
-  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+  constructor(
+    private iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer,
+  ) {
     effect(() => {
       const items = this.socialItems();
       for (const item of items) {

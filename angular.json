@@ -55,13 +55,8 @@
               "aot": false,
               "optimization": false,
               "extractLicenses": false,
-              "styles": [
-                "src/styles.scss"
-              ],
-              "polyfills": [
-                "zone.js",
-                "zone.js/testing"
-              ]
+              "styles": ["src/styles.scss"],
+              "polyfills": ["zone.js", "zone.js/testing"]
             }
           },
           "defaultConfiguration": "production"

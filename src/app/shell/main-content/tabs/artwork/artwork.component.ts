@@ -21,7 +21,7 @@ export class ArtworkComponent {
         if (Array.isArray(a)) return a;
         if (Array.isArray(a.artwork)) return a.artwork;
         return [];
-      })
+      }),
     );
   }
 }

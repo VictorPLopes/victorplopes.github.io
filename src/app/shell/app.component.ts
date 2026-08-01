@@ -58,17 +58,17 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(
     private title: Title,
     private translocoService: TranslocoService,
-    private router: Router
+    private router: Router,
   ) {
     this.sub.add(
       this.translocoService.selectTranslation('profile').subscribe((profile: any) => {
         this.myProfile = profile;
-      })
+      }),
     );
     this.sub.add(
       this.translocoService.selectTranslate('portfolio').subscribe((value: any) => {
         this.title.setTitle(value);
-      })
+      }),
     );
   }
 
@@ -79,15 +79,15 @@ export class AppComponent implements OnInit, OnDestroy {
           e instanceof NavigationStart ||
           e instanceof NavigationEnd ||
           e instanceof NavigationCancel ||
-          e instanceof NavigationError
+          e instanceof NavigationError,
       ),
-      shareReplay({ bufferSize: 1, refCount: true })
+      shareReplay({ bufferSize: 1, refCount: true }),
     );
 
     this.loading$ = navEvents$.pipe(
       map((e) => e instanceof NavigationStart),
       startWith(false),
-      shareReplay({ bufferSize: 1, refCount: true })
+      shareReplay({ bufferSize: 1, refCount: true }),
     );
 
     this.hasLoadedOnce$ = navEvents$.pipe(
@@ -95,17 +95,17 @@ export class AppComponent implements OnInit, OnDestroy {
         (e) =>
           e instanceof NavigationEnd ||
           e instanceof NavigationCancel ||
-          e instanceof NavigationError
+          e instanceof NavigationError,
       ),
       take(1),
       mapTo(true),
       startWith(false),
-      shareReplay({ bufferSize: 1, refCount: true })
+      shareReplay({ bufferSize: 1, refCount: true }),
     );
 
     this.showInitialSpinner$ = combineLatest([this.loading$, this.hasLoadedOnce$]).pipe(
       map(([loading, hasLoadedOnce]) => loading && !hasLoadedOnce),
-      shareReplay({ bufferSize: 1, refCount: true })
+      shareReplay({ bufferSize: 1, refCount: true }),
     );
   }
 

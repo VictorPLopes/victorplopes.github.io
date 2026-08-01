@@ -9,17 +9,17 @@
       [disableRipple]="true"
     >
       @for (link of links; track link) {
-      <a
-        mat-tab-link
-        [routerLink]="['/', link]"
-        routerLinkActive
-        #rla="routerLinkActive"
-        [routerLinkActiveOptions]="{ exact: false }"
-        (click)="activeLink = link"
-        [active]="rla.isActive"
-      >
-        {{ link | transloco }}
-      </a>
+        <a
+          mat-tab-link
+          [routerLink]="['/', link]"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [routerLinkActiveOptions]="{ exact: false }"
+          (click)="activeLink = link"
+          [active]="rla.isActive"
+        >
+          {{ link | transloco }}
+        </a>
       }
     </nav>
     <mat-tab-nav-panel #tabPanel class="tab-content">

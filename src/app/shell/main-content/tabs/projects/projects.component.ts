@@ -21,7 +21,7 @@ export class ProjectsComponent {
         if (Array.isArray(p)) return p;
         if (Array.isArray(p.projects)) return p.projects;
         return [];
-      })
+      }),
     );
   }
 }

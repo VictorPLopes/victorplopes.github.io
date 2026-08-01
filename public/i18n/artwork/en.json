@@ -3,35 +3,21 @@
     {
       "description": "Accurate model of The Doctor's TARDIS from the BBC Show Doctor Who, with high-resolution textures. Free download available.",
       "imageUrl": "https://cdnb.artstation.com/p/assets/images/images/093/908/361/large/victor-lopes-tardis-poster-post.webp",
-      "tags": [
-        "Doctor Who",
-        "3D Model",
-        "Blender"
-      ],
+      "tags": ["Doctor Who", "3D Model", "Blender"],
       "title": "TARDIS Fan-Art",
       "url": "https://www.artstation.com/artwork/g8kVVG"
     },
     {
       "description": "3D render of the planet Jupiter, behind its moon Io.",
       "imageUrl": "https://cdna.artstation.com/p/assets/images/images/076/023/076/large/victor-lopes-jupiter-poster-50.jpg",
-      "tags": [
-        "Space",
-        "Jupiter",
-        "Render",
-        "Blender"
-      ],
+      "tags": ["Space", "Jupiter", "Render", "Blender"],
       "title": "Jupiter and Io",
       "url": "https://www.artstation.com/artwork/g0ygD8"
     },
     {
       "description": "Fully CG recreation of a photo from the Apollo 8 mission.",
       "imageUrl": "https://cdnb.artstation.com/p/assets/images/images/058/174/699/large/victor-lopes-moon-render.jpg",
-      "tags": [
-        "Space",
-        "Moon",
-        "Render",
-        "Blender"
-      ],
+      "tags": ["Space", "Moon", "Render", "Blender"],
       "title": "The Moon",
       "url": "https://www.artstation.com/artwork/Ea3ZO4"
     },
@@ -39,11 +25,7 @@
       "description": "Downloadable product for Blender that empowers 3D artists with an easy to use but highly realistic ABS PBR material specially designed for LEGO®-like bricks",
       "imageUrl": "https://cdna.artstation.com/p/assets/images/images/058/141/822/large/victor-lopes-island.jpg",
       "subtitle": "Photorealistic LEGO® for Blender",
-      "tags": [
-        "LEGO®",
-        "Blender",
-        "Download"
-      ],
+      "tags": ["LEGO®", "Blender", "Download"],
       "title": "BlendBricks",
       "url": "https://superhivemarket.com/products/blendbricks"
     },
@@ -51,23 +33,14 @@
       "description": "Recreation of an iconic frame of the classic game LEGO® Star Wars The Complete Saga, using Blender.",
       "imageUrl": "https://cdna.artstation.com/p/assets/images/images/058/144/624/large/victor-lopes-lego-norman-final-aces.jpg",
       "subtitle": "Mustache Rebel Trooper Fan-Art",
-      "tags": [
-        "LEGO®",
-        "Star Wars",
-        "Blender",
-        "Download"
-      ],
+      "tags": ["LEGO®", "Star Wars", "Blender", "Download"],
       "title": "Battle of Hoth",
       "url": "https://www.artstation.com/artwork/KOngLB"
     },
     {
       "description": "100% procedural snow material for Blender Cycles. Available for download.",
       "imageUrl": "https://cdna.artstation.com/p/assets/images/images/051/380/874/large/victor-lopes-final-render-post.jpg?1657142451",
-      "tags": [
-        "Snow",
-        "Blender",
-        "Download"
-      ],
+      "tags": ["Snow", "Blender", "Download"],
       "title": "BlendSnow",
       "url": "https://superhivemarket.com/products/blendsnow"
     },
@@ -75,11 +48,7 @@
       "description": "Inspired by The Batman (2022), I decided to render my favorite design of Batman in Blender, the v7.43 suit from Batman Arkham Knight.",
       "imageUrl": "https://cdnb.artstation.com/p/assets/images/images/069/167/483/large/victor-lopes-render.jpg",
       "subtitle": "Batman Arkham Knight Fan-Art",
-      "tags": [
-        "Batman",
-        "Fan-Art",
-        "Render"
-      ],
+      "tags": ["Batman", "Fan-Art", "Render"],
       "title": "Batsuit v7.43",
       "url": "https://www.artstation.com/artwork/8bnWYq"
     },
@@ -87,11 +56,7 @@
       "description": "Poster inspired by Vardos from SWBFII (2017), using a Stormtrooper design by Deggial Nox.",
       "imageUrl": "https://cdna.artstation.com/p/assets/images/images/064/535/664/large/victor-lopes-imperial-stormtrooper-propaganda-6-mb.jpg",
       "subtitle": "Star Wars Fan-Art",
-      "tags": [
-        "Star Wars",
-        "Fan-Art",
-        "Graphics Design"
-      ],
+      "tags": ["Star Wars", "Fan-Art", "Graphics Design"],
       "title": "Imperial Propaganda Poster",
       "url": "https://www.artstation.com/artwork/X1QD1R"
     }

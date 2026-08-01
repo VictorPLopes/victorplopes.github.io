@@ -34,7 +34,7 @@ export class OptionsComponent {
   constructor(
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
   ) {
     this.selectedLanguage = this.translocoService.getActiveLang();
 

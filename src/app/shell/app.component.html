@@ -1,47 +1,47 @@
 @if (showInitialSpinner$ | async) {
-<mat-spinner></mat-spinner>
+  <mat-spinner></mat-spinner>
 } @else {
+  <div class="layout">
+    <div class="sidebar-cell">
+      <header class="mobile-header">
+        <pf-options aria-hidden="true"></pf-options>
+      </header>
 
-<div class="layout">
-  <div class="sidebar-cell">
-    <header class="mobile-header">
-      <pf-options aria-hidden="true"></pf-options>
-    </header>
+      <pf-profile-sidebar
+        class="sidebar"
+        [name]="myProfile.name"
+        [nickname]="myProfile.nickname"
+        [avatarSrc]="myProfile.avatarSrc"
+        i18n-role
+        [role]="myProfile.role"
+        i18n-bio
+        [bio]="myProfile.bio"
+        [github]="myProfile.github"
+        [twitter]="myProfile.twitter"
+        [linkedin]="myProfile.linkedin"
+        [customWebsites]="myProfile.customWebsites ?? []"
+        [socialButtonStyle]="'tonal'"
+        [maxExpandedLinks]="6"
+      />
+    </div>
 
-    <pf-profile-sidebar
-      class="sidebar"
-      [name]="myProfile.name"
-      [nickname]="myProfile.nickname"
-      [avatarSrc]="myProfile.avatarSrc"
-      i18n-role
-      [role]="myProfile.role"
-      i18n-bio
-      [bio]="myProfile.bio"
-      [github]="myProfile.github"
-      [twitter]="myProfile.twitter"
-      [linkedin]="myProfile.linkedin"
-      [customWebsites]="myProfile.customWebsites ?? []"
-      [socialButtonStyle]="'tonal'"
-      [maxExpandedLinks]="6"
-    />
+    <div class="main-cell">
+      <header>
+        <h1>{{ 'portfolio' | transloco }}</h1>
+        <pf-options class="desktop-header"></pf-options>
+      </header>
+
+      <pf-main-content class="main" />
+
+      <footer>
+        <p>
+          <span>{{ 'website-created-with' | transloco }}</span
+          >&nbsp;<a href="https://angular.dev/">Angular</a> |
+          <span>{{ 'icons-by' | transloco }}</span
+          >&nbsp;<a target="_blank" href="https://icons8.com">Icons8</a> | ©2026
+          <b>Victor Probio Lopes</b>
+        </p>
+      </footer>
+    </div>
   </div>
-
-  <div class="main-cell">
-    <header>
-      <h1>{{ 'portfolio' | transloco }}</h1>
-      <pf-options class="desktop-header"></pf-options>
-    </header>
-
-    <pf-main-content class="main" />
-
-    <footer>
-      <p>
-        <span>{{ 'website-created-with' | transloco }}</span
-        >&nbsp;<a href="https://angular.dev/">Angular</a> | <span>{{ 'icons-by' | transloco }}</span
-        >&nbsp;<a target="_blank" href="https://icons8.com">Icons8</a> | ©2026
-        <b>Victor Probio Lopes</b>
-      </p>
-    </footer>
-  </div>
-</div>
 }

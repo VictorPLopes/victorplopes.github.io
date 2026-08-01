@@ -14,49 +14,49 @@
       <p>{{ bio() }}</p>
     </div>
     @if (socialItems()) {
-    <mat-divider />
-    <nav
-      aria-label="Social links"
-      class="social"
-      [class.many-links]="socialItems().length > maxExpandedLinks()"
-    >
-      <div class="social-rows">
-        @for (row of socialRows(); track $index) {
-        <div
-          class="social-row"
-          [style.gridTemplateColumns]="'repeat(' + row.length + ', 1fr)'"
-          role="group"
-          [attr.aria-label]="'Social row ' + ($index + 1)"
-        >
-          @for (item of row; track item.id) {
-          <a
-            class="social-link"
-            [href]="item.url"
-            [attr.target]="'_blank'"
-            rel="noopener noreferrer"
-            [attr.aria-label]="item.label"
-            [matButton]="item.style ?? socialButtonStyle()"
-          >
-            @if (item.icon) {
-            <mat-icon
-              [svgIcon]="item.id.toString()"
-              aria-hidden="false"
-              [attr.aria-label]="item.label + ' icon'"
-            ></mat-icon>
-            } @else {
-            <mat-icon
-              fontIcon="open_in_new"
-              aria-hidden="false"
-              [attr.aria-label]="item.label + ' icon'"
-            ></mat-icon>
-            }
-            <span class="social-label">{{ item.label }}</span>
-          </a>
+      <mat-divider />
+      <nav
+        aria-label="Social links"
+        class="social"
+        [class.many-links]="socialItems().length > maxExpandedLinks()"
+      >
+        <div class="social-rows">
+          @for (row of socialRows(); track $index) {
+            <div
+              class="social-row"
+              [style.gridTemplateColumns]="'repeat(' + row.length + ', 1fr)'"
+              role="group"
+              [attr.aria-label]="'Social row ' + ($index + 1)"
+            >
+              @for (item of row; track item.id) {
+                <a
+                  class="social-link"
+                  [href]="item.url"
+                  [attr.target]="'_blank'"
+                  rel="noopener noreferrer"
+                  [attr.aria-label]="item.label"
+                  [matButton]="item.style ?? socialButtonStyle()"
+                >
+                  @if (item.icon) {
+                    <mat-icon
+                      [svgIcon]="item.id.toString()"
+                      aria-hidden="false"
+                      [attr.aria-label]="item.label + ' icon'"
+                    ></mat-icon>
+                  } @else {
+                    <mat-icon
+                      fontIcon="open_in_new"
+                      aria-hidden="false"
+                      [attr.aria-label]="item.label + ' icon'"
+                    ></mat-icon>
+                  }
+                  <span class="social-label">{{ item.label }}</span>
+                </a>
+              }
+            </div>
           }
         </div>
-        }
-      </div>
-    </nav>
+      </nav>
     }
   </div>
 </aside>
