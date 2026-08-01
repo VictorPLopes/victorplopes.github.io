@@ -1,0 +1,49 @@
+@let profile = myProfile();
+
+@if (showInitialSpinner() || !profile) {
+  <mat-spinner></mat-spinner>
+} @else {
+  <div class="layout">
+    <div class="sidebar-cell">
+      <header class="mobile-header">
+        <pf-options aria-hidden="true"></pf-options>
+      </header>
+
+      <pf-profile-sidebar
+        class="sidebar"
+        [name]="profile['name']"
+        [nickname]="profile['nickname']"
+        [avatarSrc]="profile['avatarSrc']"
+        i18n-role
+        [role]="profile['role']"
+        i18n-bio
+        [bio]="profile['bio']"
+        [github]="profile['github']"
+        [twitter]="profile['twitter']"
+        [linkedin]="profile['linkedin']"
+        [customWebsites]="profile['customWebsites'] ?? []"
+        [socialButtonStyle]="'tonal'"
+        [maxExpandedLinks]="6"
+      />
+    </div>
+
+    <div class="main-cell">
+      <header>
+        <h1>{{ 'portfolio' | transloco }}</h1>
+        <pf-options class="desktop-header"></pf-options>
+      </header>
+
+      <pf-main-content class="main" />
+
+      <footer>
+        <p>
+          <span>{{ 'website-created-with' | transloco }}</span
+          >&nbsp;<a href="https://angular.dev/">Angular</a> |
+          <span>{{ 'icons-by' | transloco }}</span
+          >&nbsp;<a target="_blank" href="https://icons8.com">Icons8</a> | ©{{ currentYear }}
+          <b>Victor Probio Lopes</b>
+        </p>
+      </footer>
+    </div>
+  </div>
+}

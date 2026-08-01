@@ -1,49 +1,50 @@
 <mat-card appearance="outlined" class="text-card" [class.no-image]="!imageUrl()">
   <a
-    [href]="url() ?? 'javascript:void(0);'"
+    [attr.href]="url() || null"
     class="content"
     [class.no-image]="!imageUrl()"
-    [target]="url() ? '_blank' : ''"
+    [attr.target]="url() ? '_blank' : null"
   >
     @if (imageUrl()) {
-    <div class="cover">
-      <img
-        mat-card-image
-        [ngSrc]="imageUrl()!"
-        width="200"
-        height="200"
-        alt="{{ 'cover-image' | transloco }}"
-      />
-    </div>
+      <div class="cover">
+        <img
+          mat-card-image
+          [ngSrc]="imageUrl()!"
+          width="200"
+          height="200"
+          alt="{{ 'cover-image' | transloco }}"
+        />
+      </div>
     }
     <div class="info" [class.no-image]="!imageUrl()">
       <mat-card-header>
         <mat-card-title-group>
           <mat-card-title><b [innerHTML]="title()"></b></mat-card-title>
           @if (subtitle()) {
-          <mat-card-subtitle [innerHTML]="subtitle()"></mat-card-subtitle>
+            <mat-card-subtitle [innerHTML]="subtitle()"></mat-card-subtitle>
           }
         </mat-card-title-group>
       </mat-card-header>
       <mat-card-content [innerHTML]="description()"></mat-card-content>
       @if (tagsList() || url()) {
-      <mat-card-footer>
-        <div class="footer" [class.no-image]="!imageUrl()">
-          @if (tagsList()) {
-          <mat-chip-set>
-            @for (tag of tagsList(); track $index) {
-            <mat-chip>{{ tag }}</mat-chip>
+        <mat-card-footer>
+          <div class="footer" [class.no-image]="!imageUrl()">
+            @if (tagsList()) {
+              <mat-chip-set>
+                @for (tag of tagsList(); track $index) {
+                  <mat-chip>{{ tag }}</mat-chip>
+                }
+              </mat-chip-set>
             }
-          </mat-chip-set>
-          } @if (url()) {
-          <mat-card-actions align="end">
-            <a mat-icon-button>
-              <mat-icon>open_in_new</mat-icon>
-            </a>
-          </mat-card-actions>
-          }
-        </div>
-      </mat-card-footer>
+            @if (url()) {
+              <mat-card-actions align="end">
+                <a mat-icon-button>
+                  <mat-icon>open_in_new</mat-icon>
+                </a>
+              </mat-card-actions>
+            }
+          </div>
+        </mat-card-footer>
       }
     </div>
   </a>

@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+import { MatTabsModule } from '@angular/material/tabs';
+import { RouterModule } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
+
+@Component({
+  selector: 'pf-main-content',
+  imports: [MatTabsModule, RouterModule, TranslocoPipe],
+  templateUrl: './main-content.component.html',
+  styleUrl: './main-content.component.scss',
+})
+export class MainContentComponent {
+  protected readonly links = ['about', 'projects', 'artwork', 'contact'];
+  protected activeLink = this.links[0];
+}

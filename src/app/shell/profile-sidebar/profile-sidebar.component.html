@@ -1,0 +1,62 @@
+<aside
+  class="card sidebar-card"
+  role="complementary"
+  aria-label="{{ 'profile-summary' | transloco }}"
+>
+  <div class="card-inner">
+    <div class="personal-data">
+      <h1 class="name">{{ name() }}</h1>
+      <img [ngSrc]="avatarSrc()" [alt]="name()" width="512" height="512" class="avatar" priority />
+      <h4 class="nickname">{{ nickname() }}</h4>
+      <h3 class="role">{{ role() }}</h3>
+    </div>
+    <div class="bio">
+      <p>{{ bio() }}</p>
+    </div>
+    @if (socialItems()) {
+      <mat-divider />
+      <nav
+        aria-label="Social links"
+        class="social"
+        [class.many-links]="socialItems().length > maxExpandedLinks()"
+      >
+        <div class="social-rows">
+          @for (row of socialRows(); track $index) {
+            <div
+              class="social-row"
+              [style.gridTemplateColumns]="'repeat(' + row.length + ', 1fr)'"
+              role="group"
+              [attr.aria-label]="'Social row ' + ($index + 1)"
+            >
+              @for (item of row; track item.id) {
+                <a
+                  class="social-link"
+                  [href]="item.url"
+                  [attr.target]="'_blank'"
+                  rel="noopener noreferrer"
+                  [attr.aria-label]="item.label"
+                  [matButton]="item.style ?? socialButtonStyle()"
+                >
+                  @if (item.icon) {
+                    <mat-icon
+                      [svgIcon]="item.id.toString()"
+                      aria-hidden="false"
+                      [attr.aria-label]="item.label + ' icon'"
+                    ></mat-icon>
+                  } @else {
+                    <mat-icon
+                      fontIcon="open_in_new"
+                      aria-hidden="false"
+                      [attr.aria-label]="item.label + ' icon'"
+                    ></mat-icon>
+                  }
+                  <span class="social-label">{{ item.label }}</span>
+                </a>
+              }
+            </div>
+          }
+        </div>
+      </nav>
+    }
+  </div>
+</aside>

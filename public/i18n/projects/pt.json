@@ -4,6 +4,7 @@
       "title": "Easy VO<sub>2</sub> Max (aplicativo)",
       "subtitle": "Solução de baixo custo para medir diretamente o consumo de VO<sub>2</sub>",
       "description": "Aplicativo moderno para desktop que se conecta a uma máscara customizada via Wi-Fi e protocolo WebSocket e calcula o consumo de VO<sub>2</sub> durante o exercício diretamente usando a Equação de Bernoulli e o Efeito Haldane. Há configuração mínima, o sistema é fácil de usar, intuitivo e flexível, suportando múltiplos perfis, exportação e importação de dados e mais.",
+      "url": "https://ifsp.pergamum.com.br/acervo/102092",
       "tags": ["VO2", "C#", "Avalonia", ".NET", "Wi-Fi", "WebSocket"],
       "imageUrl": "images/projects/easy-vo2-max-logo.svg"
     },
@@ -11,6 +12,7 @@
       "title": "Easy VO<sub>2</sub> Max (dispositivo ESP8266)",
       "subtitle": "Solução de baixo custo para medir diretamente o consumo de VO<sub>2</sub>",
       "description": "Máscara sem fio com ESP8266 que coleta dados de O<sub>2</sub> e de respiração e os envia para um aplicativo de desktop remoto para processamento.",
+      "url": "https://ifsp.pergamum.com.br/acervo/102092",
       "tags": ["VO2", "C++", "ESP8266", "Arduino", "Wi-Fi", "WebSocket"],
       "imageUrl": "images/projects/easy-vo2-max-device.jpg"
     },
@@ -24,7 +26,7 @@
     {
       "title": "IT Inventory System",
       "description": "Aplicativo Web Open Source totalmente funcional para gerenciar o inventário, clientes, ordens de serviço, funcionários/usuários e produtos de uma empresa fictícia de TI/suporte técnico. O front-end da aplicação foi feito em React, e o back-end foi desenvolvido com .NET e SQL Server usando Entity Framework. Suporta autenticação e diferentes níveis de acesso.",
-      "url": "https://github.com/repos/VictorPLopes/ITInventorySystem",
+      "url": "https://github.com/VictorPLopes/ITInventorySystem",
       "tags": ["Web", "React", "TypeScript", ".NET", "C#"]
     },
     {
@@ -43,13 +45,13 @@
     {
       "title": "FixGraphicEQ",
       "description": "Ferramenta de linha de comando (CLI) que desloca uma curva GraphicEq gerada pelo AutoEQ.app para compensar a diferença no HeSuVi",
-      "url": "https://github.com/repos/VictorPLopes/FixGraphicEQ",
+      "url": "https://github.com/VictorPLopes/FixGraphicEQ",
       "tags": [".NET", "C#", "AutoEq", "Desktop", "Áudio"]
     },
     {
       "title": "OneDark Pro — Tema para Chromium",
       "description": "Port do tema One Dark Pro de Binaryify para Visual Studio Code para navegadores baseados em Chromium (Chromium, Chrome, Edge, Brave etc.)",
-      "url": "https://github.com/repos/VictorPLopes/OneDark-Pro-Chromium",
+      "url": "https://github.com/VictorPLopes/OneDark-Pro-Chromium",
       "tags": ["Tema", "OneDark", "Chromium"]
     },
     {

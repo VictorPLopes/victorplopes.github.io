@@ -3,7 +3,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIcon, MatIconRegistry } from '@angular/material/icon';
 import { MatSelect, MatOption, MatSelectTrigger, MatSelectChange } from '@angular/material/select';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
-import { ThemePickerComponent } from '../layout/theme-picker/theme-picker.component';
+import { ThemePickerComponent } from '../shell/theme-picker/theme-picker.component';
 import { Subscription } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import customLanguages from '../../../public/data/custom-languages.json';
@@ -34,7 +34,7 @@ export class OptionsComponent {
   constructor(
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
-    private translocoService: TranslocoService
+    private translocoService: TranslocoService,
   ) {
     this.selectedLanguage = this.translocoService.getActiveLang();
 

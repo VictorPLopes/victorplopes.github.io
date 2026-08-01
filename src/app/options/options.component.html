@@ -5,15 +5,15 @@
       {{ getSelectedLabel() | transloco }}
     </mat-select-trigger>
     @for (option of languages; track option) {
-    <mat-option [value]="option.id">
-      <mat-icon
-        matSuffix
-        [svgIcon]="option.id"
-        aria-hidden="false"
-        [attr.aria-label]="option.label | transloco"
-      ></mat-icon>
-      {{ option.label | transloco }}</mat-option
-    >
+      <mat-option [value]="option.id">
+        <mat-icon
+          matSuffix
+          [svgIcon]="option.id"
+          aria-hidden="false"
+          [attr.aria-label]="option.label | transloco"
+        ></mat-icon>
+        {{ option.label | transloco }}</mat-option
+      >
     }
   </mat-select>
 </mat-form-field>

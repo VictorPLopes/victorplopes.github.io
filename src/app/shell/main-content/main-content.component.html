@@ -1,0 +1,29 @@
+<section class="card main-card" role="main" aria-label="Main content">
+  <div class="card-inner">
+    <nav
+      mat-tab-nav-bar
+      [tabPanel]="tabPanel"
+      stretchTabs
+      [fitInkBarToContent]="true"
+      animationDuration="0ms"
+      [disableRipple]="true"
+    >
+      @for (link of links; track link) {
+        <a
+          mat-tab-link
+          [routerLink]="['/', link]"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [routerLinkActiveOptions]="{ exact: false }"
+          (click)="activeLink = link"
+          [active]="rla.isActive"
+        >
+          {{ link | transloco }}
+        </a>
+      }
+    </nav>
+    <mat-tab-nav-panel #tabPanel class="tab-content">
+      <router-outlet></router-outlet>
+    </mat-tab-nav-panel>
+  </div>
+</section>
