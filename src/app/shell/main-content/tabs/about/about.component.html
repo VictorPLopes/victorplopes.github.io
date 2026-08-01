@@ -1,37 +1,23 @@
 <h2 [innerHTML]="'about.hello' | transloco"></h2>
-<p [innerHTML]="'about.personal-introduction' | transloco"></p>
+
+<p [innerHTML]="'about.personal-introduction' | transloco: { age: age() }"></p>
+
 <mat-divider></mat-divider>
 <h3 [innerHTML]="'about.skills' | transloco"></h3>
+
+@let skillsList = 'about.skills-list' | transloco;
+
 <mat-list role="list">
-  <mat-list-item role="listitem">
-    <p matListItemIcon>•&nbsp;</p>
-    <p [innerHTML]="'about.programming-languages' | transloco"></p>
-  </mat-list-item>
-  <mat-list-item role="listitem">
-    <p matListItemIcon>•&nbsp;</p>
-    <p [innerHTML]="'about.web-dev' | transloco"></p>
-  </mat-list-item>
-  <mat-list-item role="listitem">
-    <p matListItemIcon>•&nbsp;</p>
-    <p [innerHTML]="'about.rest-apis' | transloco"></p>
-  </mat-list-item>
-  <mat-list-item role="listitem">
-    <p matListItemIcon>•&nbsp;</p>
-    <p [innerHTML]="'about.sql' | transloco"></p>
-  </mat-list-item>
-  <mat-list-item role="listitem">
-    <p matListItemIcon>•&nbsp;</p>
-    <p [innerHTML]="'about.embedded-systems' | transloco"></p>
-  </mat-list-item>
-  <mat-list-item role="listitem">
-    <p matListItemIcon>•&nbsp;</p>
-    <p [innerHTML]="'about.software-engineering-git' | transloco"></p>
-  </mat-list-item>
-  <mat-list-item role="listitem">
-    <p matListItemIcon>•&nbsp;</p>
-    <p [innerHTML]="'about.it-os-network-hardware' | transloco"></p>
-  </mat-list-item>
+  @if (isArray(skillsList)) {
+    @for (skill of skillsList; track $index) {
+      <mat-list-item role="listitem">
+        <p matListItemIcon>•&nbsp;</p>
+        <p [innerHTML]="skill"></p>
+      </mat-list-item>
+    }
+  }
 </mat-list>
 <mat-divider></mat-divider>
+
 <h3 [innerHTML]="'about.about-this-website-header' | transloco"></h3>
 <p [innerHTML]="'about.about-this-website-info' | transloco"></p>

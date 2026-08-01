@@ -10,6 +10,6 @@ import { TranslocoPipe } from '@jsverse/transloco';
   styleUrl: './main-content.component.scss',
 })
 export class MainContentComponent {
-  links = ['about', 'projects', 'artwork', 'contact'];
-  activeLink = this.links[0];
+  protected readonly links = ['about', 'projects', 'artwork', 'contact'];
+  protected activeLink = this.links[0];
 }

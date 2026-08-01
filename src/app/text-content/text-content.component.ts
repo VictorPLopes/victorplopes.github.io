@@ -20,12 +20,11 @@ import { TranslocoPipe } from '@jsverse/transloco';
   styleUrl: './text-content.component.scss',
 })
 export class TextContentComponent {
-  readonly title = input.required<string>();
-  readonly subtitle = input<string | undefined>();
-  readonly imageUrl = input<string | undefined>();
-  readonly description = input<string | undefined>('');
-  readonly url = input<string | undefined>();
-  readonly tags = input<string[] | undefined>([]);
-
-  readonly tagsList = computed(() => this.tags() ?? []);
+  public readonly title = input.required<string>();
+  public readonly subtitle = input<string | undefined>();
+  public readonly imageUrl = input<string | undefined>();
+  public readonly description = input<string | undefined>('');
+  public readonly url = input<string | undefined>();
+  public readonly tags = input<string[] | undefined>([]);
+  public readonly tagsList = computed(() => this.tags() ?? []);
 }

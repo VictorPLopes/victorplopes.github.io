@@ -12,7 +12,7 @@ import { takeUntil } from 'rxjs/operators';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent implements OnDestroy {
-  protected pdfSrc: string = '/documents/resume.pdf';
+  protected pdfSrc: string = 'https://copyparty.victorpl.ovh/Victor/Documents/ID/Curr%C3%ADculo%20%28P%C3%BAblico%29.pdf?k=0XBX';
   protected isDesktop: boolean = true;
   protected page: number = 2;
 

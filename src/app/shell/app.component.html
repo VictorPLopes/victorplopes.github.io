@@ -1,4 +1,6 @@
-@if (showInitialSpinner$ | async) {
+@let profile = myProfile();
+
+@if (showInitialSpinner() || !profile) {
   <mat-spinner></mat-spinner>
 } @else {
   <div class="layout">
@@ -9,17 +11,17 @@
 
       <pf-profile-sidebar
         class="sidebar"
-        [name]="myProfile.name"
-        [nickname]="myProfile.nickname"
-        [avatarSrc]="myProfile.avatarSrc"
+        [name]="profile['name']"
+        [nickname]="profile['nickname']"
+        [avatarSrc]="profile['avatarSrc']"
         i18n-role
-        [role]="myProfile.role"
+        [role]="profile['role']"
         i18n-bio
-        [bio]="myProfile.bio"
-        [github]="myProfile.github"
-        [twitter]="myProfile.twitter"
-        [linkedin]="myProfile.linkedin"
-        [customWebsites]="myProfile.customWebsites ?? []"
+        [bio]="profile['bio']"
+        [github]="profile['github']"
+        [twitter]="profile['twitter']"
+        [linkedin]="profile['linkedin']"
+        [customWebsites]="profile['customWebsites'] ?? []"
         [socialButtonStyle]="'tonal'"
         [maxExpandedLinks]="6"
       />
@@ -38,7 +40,7 @@
           <span>{{ 'website-created-with' | transloco }}</span
           >&nbsp;<a href="https://angular.dev/">Angular</a> |
           <span>{{ 'icons-by' | transloco }}</span
-          >&nbsp;<a target="_blank" href="https://icons8.com">Icons8</a> | ©2026
+          >&nbsp;<a target="_blank" href="https://icons8.com">Icons8</a> | ©{{ currentYear }}
           <b>Victor Probio Lopes</b>
         </p>
       </footer>

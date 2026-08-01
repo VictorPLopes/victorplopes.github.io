@@ -1,4 +1,4 @@
-// Taken from https://krishnamohan.dev/blog/angular-dark/
+// Adapted from https://krishnamohan.dev/blog/angular-dark/
 
 import { Component, effect, OnInit, Renderer2, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,7 +20,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   styleUrl: './theme-picker.component.scss',
 })
 export class ThemePickerComponent implements OnInit {
-  mode = signal('dark');
+  protected readonly mode = signal('dark');
   static storageKey = 'docs-theme-storage-current-name';
 
   constructor(private renderer: Renderer2) {
@@ -42,11 +42,7 @@ export class ThemePickerComponent implements OnInit {
     }
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
       const newColorScheme = event.matches ? 'dark' : 'light';
-      if (event.matches) {
-        this.mode.set('dark');
-      } else {
-        this.mode.set('light');
-      }
+      this.mode.set(newColorScheme);
     });
   }
 
